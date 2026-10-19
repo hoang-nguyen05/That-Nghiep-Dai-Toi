@@ -1,6 +1,6 @@
-# 📄 CV Trợ Giảng Tin Học - Nguyễn Đắc Hoàng
+# ⚔️ Dự Án: Thất Nghiệp Đại Tội
 
-Trang web CV cá nhân trực tuyến được xây dựng bằng **HTML5, CSS3 và JavaScript thuần (Vanilla)**, tối ưu hiển thị trên mọi thiết bị và hỗ trợ in/xuất PDF chuẩn khổ **A4**.
+> Trang web CV cá nhân & đồ án nhóm **Thất Nghiệp Đại Tội** (Team 7 thành viên) được xây dựng bằng **HTML5, CSS3 và JavaScript thuần (Vanilla)**, tối ưu hiển thị trên mọi thiết bị và hỗ trợ in/xuất PDF chuẩn khổ **A4**.
 
 ---
 
@@ -32,22 +32,22 @@ Trang web CV cá nhân trực tuyến được xây dựng bằng **HTML5, CSS3 
 ### 1. Triển khai qua Cloudflare Pages (Miễn phí, tốc độ cao)
 1. Đăng nhập vào [Cloudflare Dashboard](https://dash.cloudflare.com/) > **Workers & Pages**.
 2. Chọn tab **Pages** > **Connect to Git**.
-3. Chọn repository này: `hoang-nguyen05/CV-NguyenDacHoang`.
+3. Chọn repository: `hoang-nguyen05/That-Nghiep-Dai-Toi`.
 4. Cấu hình build:
-   - **Framework preset**: None
+   - **Project name**: `that-nghiep-dai-toi` (Link: `https://that-nghiep-dai-toi.pages.dev`)
+   - **Production branch**: `main`
+   - **Framework preset**: `None`
    - **Build command**: (Để trống)
    - **Build output directory**: `.` (hoặc `./`)
-5. Nhấn **Save and Deploy**. Bạn sẽ nhận được đường link dạng `https://cv-nguyendachoang.pages.dev`.
+5. Nhấn **Save and Deploy**.
 
 ### 2. Triển khai qua GitHub Pages
-1. Vào repository trên GitHub > **Settings** > **Pages**.
-2. Tại mục **Build and deployment** > **Branch**, chọn nhánh `main` và thư mục `/ (root)`.
-3. Nhấn **Save**. Sau khoảng 1 phút, trang web sẽ hoạt động tại:
-   `https://hoang-nguyen05.github.io/CV-NguyenDacHoang/`
+Đã được kích hoạt tại:
+🔗 **[https://hoang-nguyen05.github.io/That-Nghiep-Dai-Toi/](https://hoang-nguyen05.github.io/That-Nghiep-Dai-Toi/)**
 
 ---
 
-## 👥 Quản Lý Nhóm & Cộng Tác Viên (7 Thành Viên)
-- Bạn có thể liên kết repository này vào **GitHub Project #1** tại:
-  `https://github.com/users/hoang-nguyen05/projects/1/settings`
-- Vào mục **Settings** > **Manage access** trong Project hoặc Repository để thêm 7 thành viên vào làm cộng tác viên (Collaborators).
+## 👥 Quản Lý Nhóm 7 Người (Thất Nghiệp Đại Tội)
+- **GitHub Project Board #1**: [https://github.com/users/hoang-nguyen05/projects/1/settings](https://github.com/users/hoang-nguyen05/projects/1/settings)
+- Thêm 7 thành viên vào làm cộng tác viên trực tiếp của repository tại:
+  [https://github.com/hoang-nguyen05/That-Nghiep-Dai-Toi/settings/access](https://github.com/hoang-nguyen05/That-Nghiep-Dai-Toi/settings/access)
