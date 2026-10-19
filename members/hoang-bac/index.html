@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV Hoàng Bắc | Sinh Viên CNTT - Frontend / Web Developer</title>
+  <meta name="description" content="CV Hoàng Bắc - Sinh viên Công nghệ Thông tin tại Đại học CNTT và Truyền thông Thái Nguyên (ICTU). Mục tiêu ứng tuyển Thực tập sinh / Junior Web Developer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Floating Top Control Bar -->
+  <header class="control-bar no-print">
+    <div class="control-container">
+      <div class="brand-tag">
+        <span class="status-indicator"></span>
+        <span class="brand-text"><strong>Hoàng Bắc</strong> &bull; CV Trực Tuyến</span>
+      </div>
+      <div class="action-buttons">
+        <a class="btn btn-secondary" href="../">← Thành viên</a>
+        <button id="themeToggle" class="btn btn-secondary" title="Đổi giao diện Sáng / Tối">
+          <svg class="icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+          </svg>
+          <svg class="icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <span class="btn-text">Giao diện</span>
+        </button>
+
+        <button id="copyLinkBtn" class="btn btn-secondary" title="Sao chép link CV">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          <span class="btn-text">Sao chép Link</span>
+        </button>
+
+        <button id="printBtn" class="btn btn-primary" title="In hoặc lưu dạng PDF">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+          </svg>
+          <span class="btn-text">In CV / Tải PDF</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Notification Toast -->
+  <div id="toast" class="toast" role="alert" aria-live="polite">
+    <span class="toast-icon">✓</span>
+    <span id="toastMessage">Đã sao chép vào bộ nhớ tạm!</span>
+  </div>
+
+  <!-- Background decorative light glow -->
+  <div class="bg-glow bg-glow-1 no-print"></div>
+  <div class="bg-glow bg-glow-2 no-print"></div>
+
+  <!-- Main CV Paper Wrapper -->
+  <main class="cv-wrapper">
+    <div class="cv-page">
+      
+      <!-- LEFT SIDEBAR -->
+      <aside class="cv-sidebar">
+        <!-- Profile Avatar & Identity -->
+        <div class="profile-block">
+          <div class="avatar-container">
+            <img src="avatar.jpg" alt="Hoàng Bắc - Sinh viên CNTT" class="avatar-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80'">
+            <span class="open-to-work-badge" title="Đang sẵn sàng đi thực tập">
+              <span class="badge-dot"></span> Sẵn sàng thực tập
+            </span>
+          </div>
+
+          <h1 class="candidate-name">HOÀNG BẮC</h1>
+          <p class="candidate-title">Sinh Viên CNTT &bull; Web Developer</p>
+        </div>
+
+        <!-- Contact Information -->
+        <section class="sidebar-section">
+          <h2 class="sidebar-heading">
+            <span class="heading-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </span>
+            Thông Tin Liên Hệ
+          </h2>
+          
+          <ul class="contact-list">
+            <li class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+              </div>
+              <div class="contact-info">
+                <span class="info-label">Ngày sinh</span>
+                <span class="info-value">13/09/2005</span>
+              </div>
+            </li>
+
+            <li class="contact-item copyable" data-copy="0398123456" title="Nhấp để sao chép SĐT">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div class="contact-info">
+                <span class="info-label">Điện thoại</span>
+                <span class="info-value">0398 123 456 <small class="copy-hint">(Click sao chép)</small></span>
+              </div>
+            </li>
+
+            <li class="contact-item copyable" data-copy="hoangbac.ictu@gmail.com" title="Nhấp để sao chép Email">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="contact-info">
+                <span class="info-label">Email</span>
+                <span class="info-value">hoangbac.ictu@gmail.com</span>
+              </div>
+            </li>
+
+            <li class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="contact-info">
+                <span class="info-label">Địa chỉ</span>
+                <span class="info-value">Thái Nguyên & Hà Nội, VN</span>
+              </div>
+            </li>
+
+            <li class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+              </div>
+              <div class="contact-info">
+                <span class="info-label">GitHub</span>
+                <a href="https://github.com/hoangbac-dev" target="_blank" rel="noopener" class="info-link">github.com/hoangbac-dev</a>
+              </div>
+            </li>
+
+            <li class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+              </div>
+              <div class="contact-info">
+                <span class="info-label">Portfolio cá nhân</span>
+                <a href="https://hoangbac.dev" target="_blank" rel="noopener" class="info-link">hoangbac.dev</a>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Education (Học vấn) -->
+        <section class="sidebar-section">
+          <h2 class="sidebar-heading">
+            <span class="heading-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+              </svg>
+            </span>
+            Học Vấn
+          </h2>
+
+          <div class="education-card">
+            <div class="edu-header">
+              <h3 class="school-name">Đại học CNTT và Truyền thông Thái Nguyên</h3>
+              <span class="school-acronym">(ICTU)</span>
+            </div>
+            <p class="edu-major">Chuyên ngành: <strong>Công nghệ Thông tin</strong></p>
+            <div class="edu-timeline">
+              <span class="timeline-badge">2023 - 2027 (Dự kiến)</span>
+            </div>
+            
+            <div class="gpa-badge-container">
+              <div class="gpa-card">
+                <div class="gpa-metric">
+                  <span class="gpa-label">Điểm tích lũy</span>
+                  <div class="gpa-value-row">
+                    <strong class="gpa-number">3.0</strong>
+                    <span class="gpa-scale">/ 4.0</span>
+                  </div>
+                </div>
+                <div class="gpa-rank">Xếp loại: Khá - Giỏi</div>
+              </div>
+            </div>
+            
+            <p class="edu-note">Đã hoàn thành các học phần trọng tâm: Cấu trúc dữ liệu & Giải thuật, Lập trình hướng đối tượng (OOP), Cơ sở dữ liệu, Thiết kế & Phát triển Web.</p>
+          </div>
+        </section>
+
+        <!-- Technical Skills (Kỹ năng) -->
+        <section class="sidebar-section">
+          <h2 class="sidebar-heading">
+            <span class="heading-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </span>
+            Kỹ Năng Kỹ Thuật
+          </h2>
+
+          <div class="skill-group">
+            <h4 class="skill-category-title">Frontend</h4>
+            <div class="skill-tags">
+              <span class="tag tag-primary">HTML5</span>
+              <span class="tag tag-primary">CSS3 / SASS</span>
+              <span class="tag tag-primary">JavaScript (ES6+)</span>
+              <span class="tag tag-primary">React.js</span>
+              <span class="tag">Tailwind CSS</span>
+              <span class="tag">Responsive Design</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h4 class="skill-category-title">Backend & Database (Cơ bản)</h4>
+            <div class="skill-tags">
+              <span class="tag">Node.js</span>
+              <span class="tag">Express.js</span>
+              <span class="tag">RESTful API</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">MongoDB</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h4 class="skill-category-title">Công cụ & Khác</h4>
+            <div class="skill-tags">
+              <span class="tag">Git & GitHub</span>
+              <span class="tag">VS Code</span>
+              <span class="tag">Postman</span>
+              <span class="tag">Figma (UI/UX)</span>
+              <span class="tag">Vercel / Netlify</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Soft Skills & Languages -->
+        <section class="sidebar-section">
+          <h2 class="sidebar-heading">
+            <span class="heading-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              </svg>
+            </span>
+            Ngoại Ngữ & Kỹ Năng Mềm
+          </h2>
+
+          <ul class="bullet-list">
+            <li><strong>Tiếng Anh:</strong> Đọc hiểu tốt tài liệu kỹ thuật & API, giao tiếp cơ bản.</li>
+            <li><strong>Tư duy logic & giải quyết vấn đề:</strong> Thích tìm tòi debug và tối ưu mã nguồn.</li>
+            <li><strong>Làm việc nhóm:</strong> Tinh thần trách nhiệm cao, sử dụng Git quy chuẩn, lắng nghe phản hồi.</li>
+            <li><strong>Tự học & thích nghi:</strong> Nắm bắt công nghệ mới và thư viện mới nhanh chóng.</li>
+          </ul>
+        </section>
+      </aside>
+
+      <!-- RIGHT MAIN CONTENT -->
+      <div class="cv-main">
+        
+        <!-- Objective (Mục tiêu nghề nghiệp) -->
+        <section class="main-section">
+          <div class="section-title-wrap">
+            <div class="section-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="12 6 12 12 16 14"></polygon>
+              </svg>
+            </div>
+            <h2 class="section-title">Mục Tiêu Nghề Nghiệp</h2>
+          </div>
+          <div class="section-content">
+            <p class="objective-text">
+              Là sinh viên năm 2 chuyên ngành <strong>Công nghệ Thông tin</strong> tại <strong>Đại học CNTT & Truyền thông Thái Nguyên (ICTU)</strong> với nền tảng tư duy lập trình vững chắc, thành thạo <strong>HTML5, CSS3, JavaScript (ES6+)</strong> và <strong>React.js</strong>.
+            </p>
+            <div class="objective-goals">
+              <div class="goal-item">
+                <div class="goal-bullet"></div>
+                <div>
+                  <strong>Mục tiêu ngắn hạn (6 tháng - 1 năm):</strong> 
+                  Tìm kiếm vị trí <em>Thực tập sinh Frontend / Web Developer</em> để học hỏi quy trình phát triển phần mềm chuẩn Agile/Scrum, cọ xát với các dự án thực tế và hoàn thành xuất sắc các nhiệm vụ được giao.
+                </div>
+              </div>
+              <div class="goal-item">
+                <div class="goal-bullet"></div>
+                <div>
+                  <strong>Mục tiêu dài hạn (2 - 3 năm):</strong> 
+                  Trở thành <em>Lập trình viên Web Full-Stack vững chuyên môn</em>, có khả năng xây dựng các hệ thống web tối ưu trải nghiệm người dùng, chịu tải cao và đóng góp giá trị lâu dài cho sự phát triển của công ty.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Projects (Dự án tiêu biểu) -->
+        <section class="main-section">
+          <div class="section-title-wrap">
+            <div class="section-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+              </svg>
+            </div>
+            <h2 class="section-title">Dự Án Nổi Bật</h2>
+          </div>
+
+          <div class="projects-list">
+            
+            <!-- Project 1 -->
+            <article class="project-card featured">
+              <div class="project-header">
+                <div class="project-title-group">
+                  <span class="project-badge">Dự án chính</span>
+                  <h3 class="project-name">ICTU Student Hub &bull; Cổng Thông Tin & Diễn Đàn Sinh Viên</h3>
+                </div>
+                <span class="project-period">09/2024 - 12/2024</span>
+              </div>
+
+              <p class="project-desc">
+                Nền tảng web hỗ trợ sinh viên trường ICTU tra cứu tài liệu học tập, chia sẻ đề thi mẫu, lịch hoạt động câu lạc bộ và thảo luận đồ án môn học theo từng khoa.
+              </p>
+
+              <div class="project-details">
+                <div class="detail-row">
+                  <span class="detail-label">Vai trò:</span>
+                  <span class="detail-value">Trưởng nhóm & Lead Frontend Developer (Nhóm 3 thành viên)</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Công nghệ:</span>
+                  <div class="tech-pills">
+                    <span class="tech-pill">React.js</span>
+                    <span class="tech-pill">Tailwind CSS</span>
+                    <span class="tech-pill">Node.js</span>
+                    <span class="tech-pill">Express</span>
+                    <span class="tech-pill">MongoDB</span>
+                    <span class="tech-pill">REST API</span>
+                  </div>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Nhiệm vụ:</span>
+                  <ul class="task-bullets">
+                    <li>Thiết kế giao diện UI/UX trên Figma và hiện thực hóa bằng <strong>React.js & Tailwind CSS</strong> chuẩn Responsive trên mọi thiết bị.</li>
+                    <li>Xây dựng tính năng xác thực đăng nhập người dùng (JWT), tìm kiếm & lọc tài liệu theo khoa/học phần với debounce tối ưu hiệu năng.</li>
+                    <li>Tích hợp REST API trao đổi dữ liệu với backend, quản lý state ứng dụng mượt mà, thân thiện với người dùng.</li>
+                  </ul>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Kết quả:</span>
+                  <span class="highlight-result">Đạt điểm A+ học phần Đồ án Công nghệ Web, nhận phản hồi tích cực từ hơn 300 sinh viên trải nghiệm bản thử nghiệm.</span>
+                </div>
+              </div>
+
+              <div class="project-links">
+                <a href="https://github.com/hoangbac-dev/ictu-student-hub" target="_blank" rel="noopener" class="link-btn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  Mã nguồn GitHub
+                </a>
+                <a href="https://ictu-student-hub.vercel.app" target="_blank" rel="noopener" class="link-btn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  Xem Demo Trực Tiếp
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article class="project-card">
+              <div class="project-header">
+                <div class="project-title-group">
+                  <span class="project-badge sub">Dự án cá nhân</span>
+                  <h3 class="project-name">TechGear Store &bull; Website Thương Mại Điện Tử Linh Kiện Máy Tính</h3>
+                </div>
+                <span class="project-period">04/2024 - 07/2024</span>
+              </div>
+
+              <p class="project-desc">
+                Trang web bán phụ kiện công nghệ (bàn phím cơ, chuột gaming, tai nghe) với trải nghiệm mua sắm hiện đại, hiệu ứng thị giác mượt mà và tốc độ tải trang cao.
+              </p>
+
+              <div class="project-details">
+                <div class="detail-row">
+                  <span class="detail-label">Công nghệ:</span>
+                  <div class="tech-pills">
+                    <span class="tech-pill">JavaScript ES6+</span>
+                    <span class="tech-pill">HTML5 / Modern CSS</span>
+                    <span class="tech-pill">LocalStorage API</span>
+                    <span class="tech-pill">Responsive Flexbox/Grid</span>
+                  </div>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Nhiệm vụ:</span>
+                  <ul class="task-bullets">
+                    <li>Xây dựng hoàn toàn bằng Vanilla JavaScript thuần để nắm sâu bản chất DOM manipulation, Event loop và kiến trúc component hướng module.</li>
+                    <li>Phát triển giỏ hàng động (thêm, xóa, cập nhật số lượng, tính tiền tự động) lưu trữ bền vững với LocalStorage.</li>
+                    <li>Triển khai tính năng bộ lọc đa tiêu chí (mức giá, hãng sản xuất, loại switch) với giao diện Dark/Light mode ấn tượng.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="project-links">
+                <a href="https://github.com/hoangbac-dev/techgear-store" target="_blank" rel="noopener" class="link-btn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  Mã nguồn GitHub
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 3 -->
+            <article class="project-card">
+              <div class="project-header">
+                <div class="project-title-group">
+                  <span class="project-badge sub">Ứng dụng Web</span>
+                  <h3 class="project-name">Smart Pomodoro & Task Kanban &bull; Quản Lý Học Tập</h3>
+                </div>
+                <span class="project-period">01/2024 - 03/2024</span>
+              </div>
+
+              <p class="project-desc">
+                Ứng dụng web năng suất giúp sinh viên lập kế hoạch học tập, quản lý deadline theo phương pháp bảng Kanban kéo thả (Drag and Drop) kết hợp đồng hồ Pomodoro.
+              </p>
+
+              <div class="project-details">
+                <div class="detail-row">
+                  <span class="detail-label">Công nghệ:</span>
+                  <div class="tech-pills">
+                    <span class="tech-pill">HTML5 Drag & Drop</span>
+                    <span class="tech-pill">CSS Animations</span>
+                    <span class="tech-pill">Audio Web API</span>
+                    <span class="tech-pill">Chart.js</span>
+                  </div>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Điểm nhấn:</span>
+                  <span class="detail-value">Tích hợp âm thanh chuông báo và biểu đồ thống kê số giờ học tập tập trung trong tuần.</span>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- Activities & Achievements (Hoạt động & Thành tích) -->
+        <section class="main-section">
+          <div class="section-title-wrap">
+            <div class="section-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="8" r="7"></circle>
+                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+              </svg>
+            </div>
+            <h2 class="section-title">Hoạt Động & Chứng Chỉ</h2>
+          </div>
+
+          <div class="timeline-container">
+            
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-header">
+                  <h4 class="timeline-title">Thành viên Ban Chuyên Môn &bull; CLB Tin học & Lập trình ICTU</h4>
+                  <span class="timeline-date">10/2023 - Hiện tại</span>
+                </div>
+                <p class="timeline-text">
+                  Tham gia hỗ trợ tổ chức các buổi chia sẻ kiến thức "Lập trình Web căn bản" cho các bạn sinh viên khóa mới; cùng các thành viên giải các bài toán trên LeetCode & HackerRank.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-header">
+                  <h4 class="timeline-title">Top 10 Ý tưởng Sáng tạo Sinh viên Khởi nghiệp Công nghệ ICTU</h4>
+                  <span class="timeline-date">05/2024</span>
+                </div>
+                <p class="timeline-text">
+                  Dự án đề tài "Hệ thống hỗ trợ quản lý học tập thông minh cho tân sinh viên", được Hội đồng giám khảo đánh giá cao về tính khả thi và tính ứng dụng thực tế.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-header">
+                  <h4 class="timeline-title">Chứng chỉ Chuyên Môn Trực Tuyến</h4>
+                  <span class="timeline-date">2023 - 2024</span>
+                </div>
+                <ul class="cert-list">
+                  <li><strong>Responsive Web Design Certificate</strong> &bull; freeCodeCamp (300 giờ học & dự án thực hành)</li>
+                  <li><strong>JavaScript Algorithms and Data Structures</strong> &bull; freeCodeCamp</li>
+                  <li><strong>Khóa học HTML5, CSS3 & JavaScript Nâng Cao</strong> &bull; F8 Fullstack Web</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Interactive script for Theme, Copy, and Print -->
+  <script>
+    // Theme toggle logic
+    const themeToggleBtn = document.getElementById('themeToggle');
+    const htmlElement = document.documentElement;
+    
+    // Check saved theme or system preference
+    const savedTheme = localStorage.getItem('hoangbac_cv_theme') || 'dark';
+    htmlElement.setAttribute('data-theme', savedTheme);
+
+    themeToggleBtn.addEventListener('click', () => {
+      const currentTheme = htmlElement.getAttribute('data-theme');
+      const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      htmlElement.setAttribute('data-theme', nextTheme);
+      localStorage.setItem('hoangbac_cv_theme', nextTheme);
+      showToast(nextTheme === 'dark' ? 'Đã đổi sang Giao diện Tối' : 'Đã đổi sang Giao diện Sáng');
+    });
+
+    // Print CV logic
+    document.getElementById('printBtn').addEventListener('click', () => {
+      window.print();
+    });
+
+    // Copy CV link
+    document.getElementById('copyLinkBtn').addEventListener('click', () => {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        showToast('Đã sao chép liên kết CV vào bộ nhớ tạm!');
+      }).catch(() => {
+        showToast('Sao chép thất bại, hãy sao chép từ thanh địa chỉ.');
+      });
+    });
+
+    // Copy on click for contact items
+    document.querySelectorAll('.copyable').forEach(item => {
+      item.addEventListener('click', () => {
+        const textToCopy = item.getAttribute('data-copy');
+        if (textToCopy) {
+          navigator.clipboard.writeText(textToCopy).then(() => {
+            showToast(`Đã sao chép: ${textToCopy}`);
+          });
+        }
+      });
+    });
+
+    // Toast notification helper
+    let toastTimeout;
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMessage');
+      toastMsg.textContent = message;
+      toast.classList.add('show');
+      
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
