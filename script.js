@@ -78,7 +78,7 @@ Facebook: facebook.com/nguyenhoang2905
       } else {
         btnToggleEdit.classList.remove('active');
         btnToggleEdit.querySelector('span').textContent = 'Chỉnh sửa nhanh';
-        showToast('✓ Đã lưu thay đổi giao diện');
+        showToast('✓ Đã tắt chế độ sửa. Thay đổi chỉ có trong lần xem này; hãy in PDF để giữ lại.');
       }
     }
   }

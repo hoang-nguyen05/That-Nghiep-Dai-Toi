@@ -1,53 +1,59 @@
-# ⚔️ Dự Án: Thất Nghiệp Đại Tội
+# Thất Nghiệp Đại Tội
 
-> Trang web CV cá nhân & đồ án nhóm **Thất Nghiệp Đại Tội** (Team 7 thành viên) được xây dựng bằng **HTML5, CSS3 và JavaScript thuần (Vanilla)**, tối ưu hiển thị trên mọi thiết bị và hỗ trợ in/xuất PDF chuẩn khổ **A4**.
+Website CV của nhóm 7 thành viên, dùng HTML, CSS và JavaScript thuần.
 
----
+- [Website GitHub Pages](https://hoang-nguyen05.github.io/That-Nghiep-Dai-Toi/)
+- [Bảng GitHub Project #1](https://github.com/users/hoang-nguyen05/projects/1)
+- CV Nguyễn Đắc Hoàng: `hoang.html`; 6 hồ sơ còn lại chờ thành viên cung cấp.
 
-## 🌟 Tính Năng Nổi Bật
+## Thêm thành viên và CV
 
-- 🎨 **Giao diện chuẩn thiết kế gốc**: Phối màu đất ấm thanh lịch (TopCV warm style), bố cục 2 cột cân đối, hiển thị thông tin học vấn, kỹ năng, dự án và kinh nghiệm rõ ràng.
-- 🖨️ **Chuẩn in A4 / Xuất PDF**: Đã cấu hình bộ quy tắc `@media print` giúp xuất ra file PDF A4 hoàn chỉnh không bị vỡ bố cục hay tràn trang.
-- ✎ **Chỉnh sửa nhanh (Quick Edit)**: Nhấp nút **Chỉnh sửa nhanh** để chỉnh sửa trực tiếp nội dung văn bản trên trình duyệt.
-- 📋 **Sao chép liên hệ**: Nhấp để copy nhanh số điện thoại, email và thông tin liên hệ.
-- 🖼️ **Khung avatar linh hoạt**: Để trống avatar trắng tinh gọn hoặc nhấp trực tiếp vào khung avatar để tải ảnh mới lên xem trước.
+1. Chủ repo vào [Repository → Settings → Collaborators](https://github.com/hoang-nguyen05/That-Nghiep-Dai-Toi/settings/access), chọn **Add people**, nhập username GitHub. Thành viên cần chấp nhận lời mời.
+2. Nếu cần sửa bảng công việc, thêm người đó tại [Project → Settings → Manage access](https://github.com/users/hoang-nguyen05/projects/1/settings/access), cấp **Write**. Quyền repo và Project được quản lý riêng.
+3. Thành viên tạo nhánh riêng, sao chép `cv-template.html` thành file ở thư mục gốc, ví dụ `lan.html`. Có thể dùng CV HTML tự thiết kế, miễn mở được bằng liên kết tương đối.
+4. Điền nội dung và ảnh của mình. Mỗi người sửa file riêng để tránh xung đột. Với ảnh, dùng thư mục `assets/ten-thanh-vien/` và đường dẫn tương đối.
+5. Thay một ô chờ trong `members.json` bằng tên, vai trò, chữ viết tắt và đường dẫn file:
 
----
+   ```json
+   {"name":"Tên thành viên","role":"Lập trình viên web","url":"lan.html","initials":"L"}
+   ```
 
-## 📁 Cấu Trúc Thư Mục
+   Giữ đủ 7 phần tử, dùng tên file không dấu, không khoảng trắng. Để `url: null` khi hồ sơ chưa sẵn sàng.
+6. Push nhánh, tạo Pull Request, chủ repo kiểm tra rồi merge vào `main`. Website cập nhật theo cấu hình hosting đã kết nối.
 
-```text
-├── index.html       # File HTML chứa cấu trúc và nội dung CV
-├── style.css        # Định dạng giao diện, hiệu ứng và print styles
-├── script.js        # Script xử lý tương tác (In PDF, sửa nhanh, copy, tải ảnh)
-├── assets/          # Thư mục chứa hình ảnh tài nguyên
-│   └── avatar.jpg
-└── README.md        # Tài liệu hướng dẫn dự án
-```
+**Chỉnh sửa nhanh và tải ảnh trên trang CV chỉ thay đổi bản xem trong trình duyệt, không lưu vào GitHub.** Muốn cập nhật công khai, sửa file nguồn và commit. Có thể dùng In / Lưu PDF để giữ bản đang xem.
 
----
+## Chạy thử trên máy
 
-## 🚀 Triển Khai Lên Web (Deployment)
+Trong thư mục repo chạy `python -m http.server 8080`, mở `http://localhost:8080`.
+Không mở `index.html` bằng `file://` vì danh sách được đọc qua `fetch`.
 
-### 1. Triển khai qua Cloudflare Pages (Miễn phí, tốc độ cao)
-1. Đăng nhập vào [Cloudflare Dashboard](https://dash.cloudflare.com/) > **Workers & Pages**.
-2. Chọn tab **Pages** > **Connect to Git**.
-3. Chọn repository: `hoang-nguyen05/That-Nghiep-Dai-Toi`.
-4. Cấu hình build:
-   - **Project name**: `that-nghiep-dai-toi` (Link: `https://that-nghiep-dai-toi.pages.dev`)
-   - **Production branch**: `main`
-   - **Framework preset**: `None`
-   - **Build command**: (Để trống)
-   - **Build output directory**: `.` (hoặc `./`)
-5. Nhấn **Save and Deploy**.
+## Cloudflare Pages
 
-### 2. Triển khai qua GitHub Pages
-Đã được kích hoạt tại:
-🔗 **[https://hoang-nguyen05.github.io/That-Nghiep-Dai-Toi/](https://hoang-nguyen05.github.io/That-Nghiep-Dai-Toi/)**
+Chủ tài khoản cần kết nối GitHub với Cloudflare một lần:
 
----
+1. Vào [Cloudflare Dashboard](https://dash.cloudflare.com/), chọn **Workers & Pages → Create application → Pages → Connect to Git** (tên mục có thể thay đổi theo giao diện).
+2. Kết nối GitHub và chọn repository `hoang-nguyen05/That-Nghiep-Dai-Toi`.
+3. Cấu hình **Production branch: main**, **Framework preset: None**, **Build command: để trống**, **Build output directory: .**, **Root directory: để trống**.
+4. Chọn **Save and Deploy**. Dùng URL `pages.dev` thực tế Cloudflare trả về; tên miền mong muốn có thể đã có người dùng.
+5. Sau khi kết nối Git, mỗi lần merge vào `main`, Cloudflare tự triển khai lại. Không cần mời thành viên vào Cloudflare để họ cập nhật CV qua repo.
 
-## 👥 Quản Lý Nhóm 7 Người (Thất Nghiệp Đại Tội)
-- **GitHub Project Board #1**: [https://github.com/users/hoang-nguyen05/projects/1/settings](https://github.com/users/hoang-nguyen05/projects/1/settings)
-- Thêm 7 thành viên vào làm cộng tác viên trực tiếp của repository tại:
-  [https://github.com/hoang-nguyen05/That-Nghiep-Dai-Toi/settings/access](https://github.com/hoang-nguyen05/That-Nghiep-Dai-Toi/settings/access)
+GitHub Pages hiện dùng nhánh `main`, thư mục `/`. Liên kết nội bộ là đường dẫn tương đối nên hỗ trợ cả tên miền gốc Cloudflare và thư mục con GitHub Pages.
+
+## GitHub Project
+
+GitHub Project theo dõi công việc; website CV được triển khai từ repository.
+Nếu dùng CLI để cấu hình bảng, cần cấp quyền một lần: `gh auth refresh -s project`.
+Liên kết repo vào bảng hiện có: `gh project link 1 --owner hoang-nguyen05 --repo hoang-nguyen05/That-Nghiep-Dai-Toi`.
+
+Gợi ý trạng thái: **Todo → In Progress → Done**. Mỗi người có thể nhận issue CV sau khi tham gia. Không cần thêm người chưa có username.
+
+## Cấu trúc
+
+- `index.html`: trang chung.
+- `team.css`, `team.js`: giao diện và danh sách nhóm.
+- `members.json`: 7 ô thành viên.
+- `hoang.html`: CV hiện có.
+- `cv-template.html`: mẫu trống cho thành viên mới.
+- `style.css`, `script.js`: giao diện và tương tác CV.
+- `assets/`: ảnh của từng thành viên.
