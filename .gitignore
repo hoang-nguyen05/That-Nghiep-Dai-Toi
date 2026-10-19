@@ -1,0 +1,13 @@
+# Dependencies & Cache
+.DS_Store
+Thumbs.db
+node_modules/
+.npm
+*.log
+
+# Editor & IDE files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
