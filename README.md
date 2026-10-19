@@ -1,5 +1,7 @@
 # ⚔️ Dự Án: Thất Nghiệp Đại Tội
 
+> Quy trình phân công công việc, mời thành viên và cấu hình Cloudflare: [TEAM_GUIDE.md](TEAM_GUIDE.md).
+
 > Trang web CV cá nhân & đồ án nhóm **Thất Nghiệp Đại Tội** (Team 7 thành viên) được xây dựng bằng **HTML5, CSS3 và JavaScript thuần (Vanilla)**, tối ưu hiển thị trên mọi thiết bị và hỗ trợ in/xuất PDF chuẩn khổ **A4**.
 
 ---
