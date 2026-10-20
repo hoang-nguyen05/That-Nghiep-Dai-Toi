@@ -2,37 +2,60 @@
 
 > Quy trình phân công công việc, mời thành viên và cấu hình Cloudflare: [TEAM_GUIDE.md](TEAM_GUIDE.md).
 
-## Hồ sơ thành viên đã nhận
+## 👥 Danh Sách 7 Thành Viên & Thư Mục CV
 
-- Nguyễn Đắc Hoàng: [CV hiện có](index.html).
-- Hoàng Bắc: [CV](members/hoang-bac/index.html), từ repo `HBac05/your-uncle-`.
-- [Danh sách thành viên](members/index.html) · [Nguồn và commit nhập](members/SOURCES.md).
+- [Trang chủ nhóm & Cổng hồ sơ](index.html)
+- [Danh sách chi tiết thành viên](members/index.html) · [Nguồn và commit nhập](members/SOURCES.md)
 
-Mỗi hồ sơ dùng thư mục riêng. Đã nhận 2 CV, 5 thành viên còn lại chưa bổ sung. Cloudflare vẫn chưa triển khai.
+| STT | Thành viên | Thư mục CV riêng | Trạng thái |
+|---|---|---|---|
+| 01 | Nguyễn Đắc Hoàng | `members/nguyen-dac-hoang/` | [Xem CV](members/nguyen-dac-hoang/index.html) |
+| 02 | Hoàng Bắc | `members/hoang-bac/` | [Xem CV](members/hoang-bac/index.html) |
+| 03 | Lường Thị Hạnh | `members/luong-thi-hanh/` | [Xem CV](members/luong-thi-hanh/index.html) |
+| 04 | Dương Tuấn Hoàng | `members/duong-tuan-hoang/` | Đang cập nhật |
+| 05 | Nguyễn Huy Hoàng | `members/nguyen-huy-hoang/` | Đang cập nhật |
+| 06 | Nông Lâm Ngọc Sơn | `members/nong-lam-ngoc-son/` | Đang cập nhật |
+| 07 | Vi Anh Quân | `members/vi-anh-quan/` | Đang cập nhật |
 
-> Trang web CV cá nhân & đồ án nhóm **Thất Nghiệp Đại Tội** (Team 7 thành viên) được xây dựng bằng **HTML5, CSS3 và JavaScript thuần (Vanilla)**, tối ưu hiển thị trên mọi thiết bị và hỗ trợ in/xuất PDF chuẩn khổ **A4**.
+> **Quy tắc làm việc:** Mỗi thành viên sở hữu một thư mục riêng biệt trong `members/` để tự quản lý file `index.html`, `style.css` và tài nguyên cá nhân, hoàn toàn không bị xung đột mã nguồn khi commit và tạo Pull Request.
 
 ---
 
 ## 🌟 Tính Năng Nổi Bật
 
-- 🎨 **Giao diện chuẩn thiết kế gốc**: Phối màu đất ấm thanh lịch (TopCV warm style), bố cục 2 cột cân đối, hiển thị thông tin học vấn, kỹ năng, dự án và kinh nghiệm rõ ràng.
+- 🌐 **Cổng hồ sơ nhóm hiện đại**: Trang chủ tổng hợp cả 7 thành viên, hỗ trợ tìm kiếm theo tên và lọc theo trạng thái hồ sơ.
+- 📂 **Phân tách thư mục độc lập**: Mỗi thành viên một khu vực riêng (`members/[tên-thành-viên]/`) chứa file `index.html` của riêng mình.
+- 🎨 **Giao diện chuẩn thiết kế gốc**: Phối màu đất ấm thanh lịch (TopCV warm style), bố cục cân đối, hiển thị rõ ràng thông tin học vấn, kỹ năng, dự án.
 - 🖨️ **Chuẩn in A4 / Xuất PDF**: Đã cấu hình bộ quy tắc `@media print` giúp xuất ra file PDF A4 hoàn chỉnh không bị vỡ bố cục hay tràn trang.
 - ✎ **Chỉnh sửa nhanh (Quick Edit)**: Nhấp nút **Chỉnh sửa nhanh** để chỉnh sửa trực tiếp nội dung văn bản trên trình duyệt.
-- 📋 **Sao chép liên hệ**: Nhấp để copy nhanh số điện thoại, email và thông tin liên hệ.
-- 🖼️ **Khung avatar linh hoạt**: Để trống avatar trắng tinh gọn hoặc nhấp trực tiếp vào khung avatar để tải ảnh mới lên xem trước.
 
 ---
 
 ## 📁 Cấu Trúc Thư Mục
 
 ```text
-├── index.html       # File HTML chứa cấu trúc và nội dung CV
-├── style.css        # Định dạng giao diện, hiệu ứng và print styles
-├── script.js        # Script xử lý tương tác (In PDF, sửa nhanh, copy, tải ảnh)
-├── assets/          # Thư mục chứa hình ảnh tài nguyên
-│   └── avatar.jpg
-└── README.md        # Tài liệu hướng dẫn dự án
+├── index.html                  # Cổng thông tin & danh mục hồ sơ nhóm
+├── style.css                   # Giao diện trang chủ (Dark & Warm modern style)
+├── script.js                   # Xử lý tìm kiếm và lọc thành viên
+├── members/                    # Thư mục khu vực thành viên
+│   ├── index.html              # Trang danh mục thành viên
+│   ├── members.css             # Giao diện danh mục
+│   ├── nguyen-dac-hoang/       # Không gian CV riêng của Nguyễn Đắc Hoàng
+│   │   ├── index.html
+│   │   ├── style.css
+│   │   ├── script.js
+│   │   └── avatar.jpg
+│   ├── hoang-bac/              # Không gian CV riêng của Hoàng Bắc
+│   │   ├── index.html
+│   │   ├── style.css
+│   │   └── avatar.jpg
+│   ├── luong-thi-hanh/         # Không gian CV riêng của Lương Thị Hạnh
+│   ├── duong-tuan-hoang/       # Không gian CV riêng của Dương Tuấn Hoàng
+│   ├── nguyen-huy-hoang/       # Không gian CV riêng của Nguyễn Huy Hoàng
+│   ├── nong-lam-ngoc-son/      # Không gian CV riêng của Nông Lâm Ngọc Sơn
+│   └── vi-anh-quan/            # Không gian CV riêng của Vi Anh Quân
+├── assets/                     # Tài nguyên dùng chung
+└── README.md                   # Tài liệu hướng dẫn dự án
 ```
 
 ---

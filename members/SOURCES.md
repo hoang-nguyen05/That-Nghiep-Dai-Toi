@@ -2,12 +2,15 @@
 
 Các trang được nhập theo yêu cầu của chủ dự án. Giữ nội dung và giao diện của tác giả, tách thư mục để CSS và tài nguyên không xung đột.
 
-| Thư mục | Nguồn | Commit nhập |
-|---|---|---|
-| `hoang-bac/` | https://github.com/HBac05/your-uncle- | `6ec20ac4b0d42511947abb8c04fe0e1c5c3ecc3c` |
+| Thư mục | Thành viên | Nguồn | Ghi chú |
+|---|---|---|---|
+| `nguyen-dac-hoang/` | Nguyễn Đắc Hoàng | Bản gốc dự án | Đã tách riêng thành thư mục độc lập |
+| `hoang-bac/` | Hoàng Bắc | https://github.com/HBac05/your-uncle- | Commit `6ec20ac4b0d42511947abb8c04fe0e1c5c3ecc3c` |
+| `luong-thi-hanh/` | Lường Thị Hạnh | Nhập từ MyCV.zip | Đầy đủ index.html, style.css, script.js, assets/avatar.jpg |
+| `duong-tuan-hoang/` | Dương Tuấn Hoàng | Đang cập nhật | Thư mục riêng để thành viên tự tải lên CV |
+| `nguyen-huy-hoang/` | Nguyễn Huy Hoàng | Đang cập nhật | Thư mục riêng để thành viên tự tải lên CV |
+| `nong-lam-ngoc-son/` | Nông Lâm Ngọc Sơn | Đang cập nhật | Thư mục riêng để thành viên tự tải lên CV |
+| `vi-anh-quan/` | Vi Anh Quân | Đang cập nhật | Thư mục riêng để thành viên tự tải lên CV |
 
-- Hoàng Bắc: nhập `index.html`, `style.css`, `avatar.jpg`; thêm liên kết về danh sách thành viên.
-- Không nhập Git metadata, file Python, file không liên quan hay gitlink của repo nguồn.
-- CV Nguyễn Đắc Hoàng tiếp tục ở trang chủ với giao diện hiện có.
-
-Để cập nhật hồ sơ: chỉnh file trong thư mục tương ứng hoặc nhập lại bản mới từ repo nguồn, kiểm tra tài nguyên và liên kết, rồi cập nhật commit nguồn trong bảng này. Đây là bản sao tại commit nêu trên, không tự đồng bộ khi tác giả thay đổi repo.
+- Mỗi thành viên có một thư mục riêng biệt trong `members/` để tự quản lý `index.html`, `style.css` và tài nguyên.
+- Không sửa đè file của thành viên khác.
