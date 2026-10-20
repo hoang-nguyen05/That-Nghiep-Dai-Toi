@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CV của Dương Tuấn Hoàng, thành viên nhóm Thất Nghiệp Đại Tội.">
+  <title>Dương Tuấn Hoàng | CV - Responsive &amp; Accessibility Developer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="toolbar no-print">
+    <a class="back-link" href="../">← Danh sách thành viên</a>
+    <span id="save-status" class="draft-label" role="status" aria-live="polite">Bản nháp cá nhân</span>
+    <div class="toolbar-actions">
+      <button id="edit-button" class="toolbar-button edit-button" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5 4 4M4 20l4-.8L19 8a2.8 2.8 0 0 0-4-4L4.8 15.2 4 20Z"/></svg> Chỉnh sửa
+      </button>
+      <button id="save-button" class="toolbar-button save-button" type="button" hidden>Lưu</button>
+      <button id="cancel-button" class="toolbar-button cancel-button" type="button" hidden>Hủy</button>
+      <button class="toolbar-button print-button" type="button" onclick="window.print()" aria-label="In CV hoặc lưu thành PDF">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8V3h10v5M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4h-2M7 14h10v7H7z"/></svg> In / Lưu PDF
+      </button>
+    </div>
+  </header>
+
+  <main class="resume">
+    <aside class="sidebar">
+      <div class="monogram" aria-hidden="true">ĐH</div>
+      <p class="sidebar-kicker">THÔNG TIN CÁ NHÂN</p>
+      <h1 data-editable data-field="name" data-placeholder="Họ và tên">Dương Tuấn Hoàng</h1>
+      <p class="role" data-editable data-field="role" data-placeholder="Vị trí ứng tuyển hoặc chức danh">TV04 · Responsive &amp; Accessibility</p>
+
+      <section class="side-section" aria-labelledby="contact-title">
+        <h2 id="contact-title">Liên hệ</h2>
+        <dl class="contact-list">
+          <div>
+            <dt>Email</dt>
+            <dd data-editable data-field="email" data-placeholder="Nhập email">dtc235200298@ictu.edu.vn</dd>
+          </div>
+          <div>
+            <dt>Điện thoại</dt>
+            <dd data-editable data-field="phone" data-placeholder="Nhập số điện thoại">0862834xxx</dd>
+          </div>
+          <div>
+            <dt>Ngày sinh</dt>
+            <dd data-editable data-field="birthdate" data-placeholder="Ngày / tháng / năm">28/11/2005</dd>
+          </div>
+          <div>
+            <dt>Khu vực</dt>
+            <dd data-editable data-field="location" data-placeholder="Tỉnh / thành phố">Thái Nguyên</dd>
+          </div>
+          <div>
+            <dt>GitHub / Portfolio</dt>
+            <dd data-editable data-field="website" data-placeholder="Nhập liên kết"></dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="side-section" aria-labelledby="skills-title">
+        <h2 id="skills-title">Kỹ năng</h2>
+        <p class="placeholder editable-placeholder" data-editable data-field="skills" data-placeholder="Thêm kỹ năng và công cụ bạn sử dụng">Thiết kế giao diện responsive · Khả năng truy cập web (Accessibility)</p>
+      </section>
+
+      <section class="side-section" aria-labelledby="languages-title">
+        <h2 id="languages-title">Ngoại ngữ</h2>
+        <p class="placeholder editable-placeholder" data-editable data-field="languages" data-placeholder="Thêm ngôn ngữ và trình độ"></p>
+      </section>
+    </aside>
+
+    <div class="content">
+      <div class="content-heading">
+        <p class="eyebrow">HỒ SƠ ỨNG TUYỂN</p>
+        <p class="updated">THÀNH VIÊN TV04</p>
+      </div>
+
+      <section class="resume-section intro-section" aria-labelledby="intro-title">
+        <h2 id="intro-title"><span>01</span> Giới thiệu</h2>
+        <p class="placeholder editable-placeholder" data-editable data-field="summary" data-placeholder="Viết vài câu giới thiệu chuyên môn, thế mạnh và vị trí bạn hướng tới.">Thành viên nhóm dự án website hồ sơ thành viên, được phân công phụ trách thiết kế responsive và khả năng truy cập (accessibility). Định hướng phát triển các giao diện dễ sử dụng trên nhiều thiết bị, rõ ràng và thân thiện với nhiều người dùng.</p>
+      </section>
+
+      <section class="resume-section" aria-labelledby="education-title">
+        <h2 id="education-title"><span>02</span> Học vấn</h2>
+        <div class="entry">
+          <div class="entry-heading">
+            <h3 data-editable data-field="school" data-placeholder="Tên trường / cơ sở đào tạo">Trường đại học Công nghệ thông tin và Truyền thông</h3>
+            <p data-editable data-field="education-period" data-placeholder="Thời gian"></p>
+          </div>
+          <p data-editable data-field="major" data-placeholder="Chuyên ngành hoặc bằng cấp">chuyên ngành công nghệ thông tin</p>
+          <p class="placeholder editable-placeholder" data-editable data-field="education-details" data-placeholder="Thành tích hoặc môn học liên quan (không bắt buộc)"></p>
+        </div>
+      </section>
+
+      <section class="resume-section" aria-labelledby="experience-title">
+        <h2 id="experience-title"><span>03</span> Kinh nghiệm</h2>
+        <div class="entry">
+          <div class="entry-heading">
+            <h3 data-editable data-field="experience-title" data-placeholder="Vị trí / hoạt động liên quan"></h3>
+            <p data-editable data-field="experience-period" data-placeholder="Thời gian"></p>
+          </div>
+          <p class="placeholder editable-placeholder" data-editable data-field="experience-details" data-placeholder="Mô tả việc đã làm và kết quả. Có thể ghi hoạt động nếu chưa có kinh nghiệm."></p>
+        </div>
+      </section>
+
+      <section class="resume-section" aria-labelledby="projects-title">
+        <h2 id="projects-title"><span>04</span> Dự án</h2>
+        <div class="entry">
+          <div class="entry-heading">
+            <h3 data-editable data-field="project-title" data-placeholder="Tên dự án">Website hồ sơ thành viên nhóm Thất Nghiệp Đại Tội</h3>
+            <p data-editable data-field="project-period" data-placeholder="Thời gian">TV04</p>
+          </div>
+          <p data-editable data-field="project-details" data-placeholder="Vai trò, công nghệ sử dụng và kết quả">Nhiệm vụ được phân công: phụ trách thiết kế responsive và khả năng truy cập (accessibility).</p>
+        </div>
+      </section>
+
+      <footer class="resume-footer">DƯƠNG TUẤN HOÀNG <span>·</span> CV CÁ NHÂN</footer>
+    </div>
+  </main>
+
+  <script>
+    const storageKey = "duong-tuan-hoang-cv-v1";
+    const fields = [...document.querySelectorAll("[data-editable]")];
+    const editButton = document.querySelector("#edit-button");
+    const saveButton = document.querySelector("#save-button");
+    const cancelButton = document.querySelector("#cancel-button");
+    const status = document.querySelector("#save-status");
+    const nameField = document.querySelector('[data-field="name"]');
+    const monogram = document.querySelector(".monogram");
+    const footerName = document.querySelector(".resume-footer");
+
+    function readFields() {
+      return Object.fromEntries(fields.map((field) => [field.dataset.field, field.innerText.trim()]));
+    }
+
+    function writeFields(values) {
+      fields.forEach((field) => {
+        field.textContent = values[field.dataset.field] || "";
+      });
+      updateNameDisplay();
+    }
+
+    function updateNameDisplay() {
+      const name = nameField.innerText.trim();
+      const words = name.split(/\s+/).filter(Boolean);
+      monogram.textContent = words.length > 1 ? `${words[0][0]}${words[words.length - 1][0]}` : (words[0] || "CV").slice(0, 2);
+      footerName.firstChild.textContent = `${name.toLocaleUpperCase("vi")} `;
+    }
+
+    function setEditing(isEditing) {
+      fields.forEach((field) => {
+        field.contentEditable = String(isEditing);
+        field.spellcheck = isEditing;
+      });
+      editButton.hidden = isEditing;
+      saveButton.hidden = !isEditing;
+      cancelButton.hidden = !isEditing;
+      status.textContent = isEditing ? "Đang chỉnh sửa" : status.textContent;
+    }
+
+    let savedValues = readFields();
+
+    try {
+      const storedValues = localStorage.getItem(storageKey);
+      if (storedValues) {
+        savedValues = { ...savedValues, ...JSON.parse(storedValues) };
+        writeFields(savedValues);
+        status.textContent = "Đã tải bản lưu trên trình duyệt này";
+      }
+    } catch {
+      status.textContent = "Không đọc được dữ liệu lưu";
+    }
+
+    editButton.addEventListener("click", () => {
+      savedValues = readFields();
+      setEditing(true);
+      nameField.focus();
+    });
+
+    saveButton.addEventListener("click", () => {
+      const values = readFields();
+      try {
+        localStorage.setItem(storageKey, JSON.stringify(values));
+        savedValues = values;
+        updateNameDisplay();
+        setEditing(false);
+        status.textContent = "Đã lưu trên trình duyệt này";
+      } catch {
+        status.textContent = "Không thể lưu; hãy thử trình duyệt khác";
+      }
+    });
+
+    cancelButton.addEventListener("click", () => {
+      writeFields(savedValues);
+      setEditing(false);
+      status.textContent = "Đã hủy chỉnh sửa";
+    });
+  </script>
+</body>
+</html>
