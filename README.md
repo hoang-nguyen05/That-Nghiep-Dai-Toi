@@ -13,7 +13,7 @@
 | 02 | Hoàng Bắc | `members/hoang-bac/` | [Xem CV](members/hoang-bac/index.html) |
 | 03 | Lường Thị Hạnh | `members/luong-thi-hanh/` | [Xem CV](members/luong-thi-hanh/index.html) |
 | 04 | Dương Tuấn Hoàng | `members/duong-tuan-hoang/` | Đang cập nhật |
-| 05 | Nguyễn Huy Hoàng | `members/nguyen-huy-hoang/` | Đang cập nhật |
+| 05 | Nguyễn Huy Hoàng | `members/nguyen-huy-hoang/` | [Xem CV](members/nguyen-huy-hoang/index.html) |
 | 06 | Nông Lâm Ngọc Sơn | `members/nong-lam-ngoc-son/` | [Xem CV](members/nong-lam-ngoc-son/index.html) |
 | 07 | Vi Anh Quân | `members/vi-anh-quan/` | Đang cập nhật |
 
