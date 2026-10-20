@@ -1,255 +1,38 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thất Nghiệp Đại Tội — Cổng Hồ Sơ Nhóm 7 Thành Viên</title>
-  <meta name="description" content="Trang chủ và danh mục hồ sơ CV cá nhân của nhóm 7 thành viên Thất Nghiệp Đại Tội. Mỗi thành viên sở hữu một khu vực mã nguồn độc lập.">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23e08a46'><path d='M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM11 16h2v2h-2zm0-6h2v4h-2z'/></svg>">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Vi Anh Quân</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="cv-container">
+        <header>
+            <h1>Vi Anh Quân</h1>
+            <p>Lập trình viên Web / Sinh viên Công nghệ thông tin</p>
+        </header>
 
-  <!-- Top Sticky Navigation -->
-  <header class="site-header" id="topHeader">
-    <div class="container nav-wrap">
-      <a href="./" class="brand-badge" id="brandLink">
-        <div class="brand-icon">⚔️</div>
-        <div class="brand-text">
-          <h1>Thất Nghiệp Đại Tội</h1>
-          <span>Team Portfolio &bull; 7 Members</span>
-        </div>
-      </a>
+        <section class="section">
+            <h2>Thông tin liên hệ</h2>
+            <p><strong>Email:</strong> dtc235200621@ictu.edu.vn</p>
+            <p><strong>Số điện thoại:</strong> 0369543330</p>
+            <p><strong>Địa chỉ:</strong> Thái Nguyên, Việt Nam</p>
+        </section>
 
-      <nav class="nav-actions" aria-label="Điều hướng nhanh">
-        <a class="btn-nav" href="members/" id="navMembersDir">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-          <span>Thư mục Members</span>
-        </a>
-        <a class="btn-nav primary" href="https://github.com/hoang-nguyen05/That-Nghiep-Dai-Toi" target="_blank" rel="noopener noreferrer" id="navGithub">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          <span>GitHub Repo</span>
-        </a>
-      </nav>
+        <section class="section">
+            <h2>Học vấn</h2>
+            <p><strong>Trường Đại học Công nghệ thông tin và Truyền thông</strong></p>
+            <p>Chuyên ngành: Công nghệ thông tin</p>
+        </section>
+
+        <section class="section">
+            <h2>Kỹ năng</h2>
+            <ul>
+                <li>HTML5 / CSS3 / JavaScript</li>
+                <li>Sử dụng Git & GitHub cơ bản</li>
+            </ul>
+        </section>
     </div>
-  </header>
-
-  <!-- Hero Section -->
-  <main class="container" id="mainContent">
-    <section class="hero">
-      <div class="hero-tag">
-        <span class="dot"></span>
-        <span>Hệ Thống Phân Tách Thư Mục Thành Viên Độc Lập</span>
-      </div>
-      <h2 class="hero-title">Không gian CV & Đồ án<br><span class="highlight">Thất Nghiệp Đại Tội</span></h2>
-      <p class="hero-desc">
-        Mỗi thành viên sở hữu riêng một thư mục làm việc trong <code>members/</code>. Tự do cấu trúc file HTML, CSS và tài nguyên cá nhân mà không lo đè file hay xung đột mã nguồn.
-      </p>
-
-      <div class="stats-grid">
-        <div class="stat-item">
-          <div class="stat-num">7</div>
-          <div class="stat-label">Tổng thành viên</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num active">6</div>
-          <div class="stat-label">CV đã tải lên</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">1</div>
-          <div class="stat-label">Đang chờ nộp</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Filter & Search Toolbar -->
-    <section class="filter-bar" aria-label="Bộ lọc và tìm kiếm thành viên">
-      <div class="filter-tabs">
-        <button class="filter-btn active" data-filter="all" id="filterAll">Tất cả (7)</button>
-        <button class="filter-btn" data-filter="ready" id="filterReady">Đã có CV (6)</button>
-        <button class="filter-btn" data-filter="pending" id="filterPending">Đang cập nhật (1)</button>
-      </div>
-
-      <div class="search-box">
-        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-        <input type="text" class="search-input" id="memberSearch" placeholder="Tìm theo tên thành viên hoặc vai trò..." aria-label="Tìm thành viên">
-      </div>
-    </section>
-
-    <!-- 7 Member Cards Grid -->
-    <section class="members-grid" id="membersGrid" aria-label="Danh sách 7 thành viên">
-
-      <!-- 1. Nguyễn Đắc Hoàng -->
-      <article class="card" data-status="ready" data-name="nguyễn đắc hoàng" data-role="trợ giảng tin học web developer">
-        <div class="card-header">
-          <div class="card-avatar">H</div>
-          <span class="badge-status ready">Đã có CV</span>
-        </div>
-        <h3 class="card-name">Nguyễn Đắc Hoàng</h3>
-        <p class="card-role">Trợ giảng Tin Học · Web Developer</p>
-        <div class="card-folder">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-          <span>members/nguyen-dac-hoang/</span>
-        </div>
-        <div class="card-actions">
-          <a class="btn-cv" href="members/nguyen-dac-hoang/" id="btnCvNguyenDacHoang">Xem CV trực tuyến →</a>
-        </div>
-      </article>
-
-      <!-- 2. Hoàng Bắc -->
-      <article class="card" data-status="ready" data-name="hoàng bắc" data-role="sinh viên cntt frontend web developer">
-        <div class="card-header">
-          <div class="card-avatar">B</div>
-          <span class="badge-status ready">Đã có CV</span>
-        </div>
-        <h3 class="card-name">Hoàng Bắc</h3>
-        <p class="card-role">Sinh viên CNTT · Frontend / Web Developer</p>
-        <div class="card-folder">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-          <span>members/hoang-bac/</span>
-        </div>
-        <div class="card-actions">
-          <a class="btn-cv" href="members/hoang-bac/" id="btnCvHoangBac">Xem CV trực tuyến →</a>
-        </div>
-      </article>
-
-      <!-- 3. Lường Thị Hạnh -->
-      <article class="card" data-status="ready" data-name="lường thị hạnh lương thị hạnh lường hạnh" data-role="kỹ sư phần mềm full-stack developer react node typescript">
-        <div class="card-header">
-          <div class="card-avatar">H</div>
-          <span class="badge-status ready">Đã có CV</span>
-        </div>
-        <h3 class="card-name">Lường Thị Hạnh</h3>
-        <p class="card-role">Kỹ Sư Phần Mềm · Full-Stack Developer</p>
-        <div class="card-folder">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-          <span>members/luong-thi-hanh/</span>
-        </div>
-        <div class="card-actions">
-          <a class="btn-cv" href="members/luong-thi-hanh/" id="btnCvLuongThiHanh">Xem CV trực tuyến →</a>
-        </div>
-      </article>
-
-      <!-- 4. Dương Tuấn Hoàng -->
-      <article class="card" data-status="ready" data-name="dương tuấn hoàng duong tuan hoang" data-role="frontend responsive accessibility web developer tv04">
-        <div class="card-header">
-          <div class="card-avatar">H</div>
-          <span class="badge-status ready">Đã có CV</span>
-        </div>
-        <h3 class="card-name">Dương Tuấn Hoàng</h3>
-        <p class="card-role">Responsive &amp; Accessibility Developer</p>
-        <div class="card-folder">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-          <span>members/duong-tuan-hoang/</span>
-        </div>
-        <div class="card-actions">
-          <a class="btn-cv" href="members/duong-tuan-hoang/" id="btnCvDuongTuanHoang">Xem CV trực tuyến →</a>
-        </div>
-      </article>
-
-      <!-- 5. Nguyễn Huy Hoàng -->
-      <article class="card" data-status="ready" data-name="nguyễn huy hoàng nguyen huy hoang" data-role="data analyst phân tích dữ liệu python django sqlite">
-        <div class="card-header">
-          <div class="card-avatar">H</div>
-          <span class="badge-status ready">Đã có CV</span>
-        </div>
-        <h3 class="card-name">Nguyễn Huy Hoàng</h3>
-        <p class="card-role">Data Analyst</p>
-        <div class="card-folder">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-          <span>members/nguyen-huy-hoang/</span>
-        </div>
-        <div class="card-actions">
-          <a class="btn-cv" href="members/nguyen-huy-hoang/" id="btnCvNguyenHuyHoang">Xem CV trực tuyến →</a>
-        </div>
-      </article>
-
-      <!-- 6. Nông Lâm Ngọc Sơn -->
-      <article class="card" data-status="ready" data-name="nông lâm ngọc sơn nong lam ngoc son" data-role="network operations center noc hạ tầng mạng cisco mikrotik">
-        <div class="card-header">
-          <div class="card-avatar">S</div>
-          <span class="badge-status ready">Đã có CV</span>
-        </div>
-        <h3 class="card-name">Nông Lâm Ngọc Sơn</h3>
-        <p class="card-role">Network Operations Center (NOC)</p>
-        <div class="card-folder">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-          <span>members/nong-lam-ngoc-son/</span>
-        </div>
-        <div class="card-actions">
-          <a class="btn-cv" href="members/nong-lam-ngoc-son/" id="btnCvNongLamNgocSon">Xem CV trực tuyến →</a>
-        </div>
-      </article>
-
-      <!-- 7. Vi Anh Quân -->
-      <article class="card" data-status="pending" data-name="vi anh quân" data-role="thành viên nhóm tv07 tài liệu báo cáo nhóm">
-        <div class="card-header">
-          <div class="card-avatar">Q</div>
-          <span class="badge-status pending">Đang cập nhật</span>
-        </div>
-        <h3 class="card-name">Vi Anh Quân</h3>
-        <p class="card-role">Thành viên nhóm · TV07</p>
-        <div class="card-folder">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-          <span>members/vi-anh-quan/</span>
-        </div>
-        <div class="card-actions">
-          <a class="btn-pending-action" href="members/vi-anh-quan/" id="btnFolderViAnhQuan">Vào thư mục tải file ↗</a>
-        </div>
-      </article>
-
-    </section>
-
-    <!-- Empty search notice -->
-    <div id="noResults" style="display: none; text-align: center; padding: 40px; color: var(--text-muted);">
-      Không tìm thấy thành viên nào khớp với từ khóa tìm kiếm.
-    </div>
-
-    <!-- Workflow & Guide Section -->
-    <section class="info-section">
-      <h3 class="info-title">🛠️ Quy Tắc Làm Việc Của Nhóm</h3>
-      <p class="info-desc">Để tránh xung đột Git (conflict) và đảm bảo mỗi thành viên có không gian độc lập:</p>
-
-      <div class="workflow-steps">
-        <div class="step-card">
-          <div class="step-num">BƯỚC 01</div>
-          <div class="step-title">Vào đúng thư mục</div>
-          <p class="step-text">Chỉ làm việc trong thư mục mang tên mình tại <code>members/[tên-thành-viên]/</code>.</p>
-        </div>
-
-        <div class="step-card">
-          <div class="step-num">BƯỚC 02</div>
-          <div class="step-title">Tạo file CV riêng</div>
-          <p class="step-text">Tạo file <code>index.html</code>, <code>style.css</code> và ảnh trong thư mục của bạn.</p>
-        </div>
-
-        <div class="step-card">
-          <div class="step-num">BƯỚC 03</div>
-          <div class="step-title">Tạo Branch & PR</div>
-          <p class="step-text">Tạo nhánh riêng từ <code>main</code>, commit thay đổi và gửi Pull Request để trưởng nhóm duyệt.</p>
-        </div>
-
-        <div class="step-card">
-          <div class="step-num">BƯỚC 04</div>
-          <div class="step-title">Tự động triển khai</div>
-          <p class="step-text">Sau khi merge vào nhánh <code>main</code>, GitHub Pages / Cloudflare Pages sẽ tự cập nhật trang web.</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Site Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2026 Dự Án <strong>Thất Nghiệp Đại Tội</strong> &bull; Đồ án nhóm 7 thành viên.</p>
-      <p style="margin-top: 6px;">
-        <a href="TEAM_GUIDE.md">Quy trình làm việc (TEAM_GUIDE.md)</a> &bull;
-        <a href="members/SOURCES.md">Nguồn CV (SOURCES.md)</a> &bull;
-        <a href="https://github.com/users/hoang-nguyen05/projects/1" target="_blank" rel="noopener noreferrer">Bảng phân công dự án ↗</a>
-      </p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
