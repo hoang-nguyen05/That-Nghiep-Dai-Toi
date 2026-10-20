@@ -14,7 +14,7 @@
 | 03 | Lường Thị Hạnh | `members/luong-thi-hanh/` | [Xem CV](members/luong-thi-hanh/index.html) |
 | 04 | Dương Tuấn Hoàng | `members/duong-tuan-hoang/` | Đang cập nhật |
 | 05 | Nguyễn Huy Hoàng | `members/nguyen-huy-hoang/` | Đang cập nhật |
-| 06 | Nông Lâm Ngọc Sơn | `members/nong-lam-ngoc-son/` | Đang cập nhật |
+| 06 | Nông Lâm Ngọc Sơn | `members/nong-lam-ngoc-son/` | [Xem CV](members/nong-lam-ngoc-son/index.html) |
 | 07 | Vi Anh Quân | `members/vi-anh-quan/` | Đang cập nhật |
 
 > **Quy tắc làm việc:** Mỗi thành viên sở hữu một thư mục riêng biệt trong `members/` để tự quản lý file `index.html`, `style.css` và tài nguyên cá nhân, hoàn toàn không bị xung đột mã nguồn khi commit và tạo Pull Request.

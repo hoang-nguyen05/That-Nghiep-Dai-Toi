@@ -9,7 +9,7 @@ Các trang được nhập theo yêu cầu của chủ dự án. Giữ nội dun
 | `luong-thi-hanh/` | Lường Thị Hạnh | Nhập từ MyCV.zip | Đầy đủ index.html, style.css, script.js, assets/avatar.jpg |
 | `duong-tuan-hoang/` | Dương Tuấn Hoàng | Đang cập nhật | Thư mục riêng để thành viên tự tải lên CV |
 | `nguyen-huy-hoang/` | Nguyễn Huy Hoàng | Đang cập nhật | Thư mục riêng để thành viên tự tải lên CV |
-| `nong-lam-ngoc-son/` | Nông Lâm Ngọc Sơn | Đang cập nhật | Thư mục riêng để thành viên tự tải lên CV |
+| `nong-lam-ngoc-son/` | Nông Lâm Ngọc Sơn | https://github.com/SEN-Elevenz/your-uncle-.git | Nhập cv.html và cv.css từ repo your-uncle- của thành viên |
 | `vi-anh-quan/` | Vi Anh Quân | Đang cập nhật | Thư mục riêng để thành viên tự tải lên CV |
 
 - Mỗi thành viên có một thư mục riêng biệt trong `members/` để tự quản lý `index.html`, `style.css` và tài nguyên.
