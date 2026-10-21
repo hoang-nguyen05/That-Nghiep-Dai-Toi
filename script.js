@@ -594,4 +594,35 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => p.remove(), 780);
     }
   });
+
+  // =========================================================================
+  // 8. Real-life Sin Drawer Accordion System ("Bản Luận Giải Đời Thực")
+  // =========================================================================
+  const sinToggleBtns = document.querySelectorAll('.btn-sin-toggle');
+
+  sinToggleBtns.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation(); // Avoid triggering full-page click bursts on toggle
+      const actionsContainer = btn.closest('.card-actions');
+      if (!actionsContainer) return;
+      const drawer = actionsContainer.querySelector('.card-sin-drawer');
+      if (!drawer) return;
+
+      const isOpen = drawer.classList.contains('open');
+
+      if (isOpen) {
+        drawer.classList.remove('open');
+        btn.classList.remove('active');
+        btn.setAttribute('aria-expanded', 'false');
+        const textSpan = btn.querySelector('.sin-toggle-left span:last-child');
+        if (textSpan) textSpan.textContent = 'Luận Giải Đời Thực';
+      } else {
+        drawer.classList.add('open');
+        btn.classList.add('active');
+        btn.setAttribute('aria-expanded', 'true');
+        const textSpan = btn.querySelector('.sin-toggle-left span:last-child');
+        if (textSpan) textSpan.textContent = 'Thu Gọn Luận Giải';
+      }
+    });
+  });
 });
