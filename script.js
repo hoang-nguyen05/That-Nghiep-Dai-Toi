@@ -498,7 +498,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // 6. Occult Lightning Strobe System ("Lôi Điện U Minh")
+  // 6. Occult Seal Manual Strike (Auto-lightning removed per request)
   // =========================================================================
   const lightningFlash = document.getElementById('lightningFlash');
   function triggerOccultLightning() {
@@ -511,17 +511,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 550);
   }
 
-  // Periodic random strike every 16 - 32 seconds
-  function scheduleNextLightning() {
-    const delay = 16000 + Math.random() * 16000;
-    setTimeout(() => {
-      triggerOccultLightning();
-      scheduleNextLightning();
-    }, delay);
-  }
-  scheduleNextLightning();
-
-  // Trigger lightning when clicking the occult seal
+  // Trigger lightning ONLY when explicitly clicking the occult seal
   const occultSeal = document.querySelector('.hero-occult-seal');
   if (occultSeal) {
     occultSeal.addEventListener('click', () => {
@@ -536,6 +526,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const defaultColors = ['#f5e08b', '#ff2a5f', '#c084fc', '#ffffff', '#eab308'];
 
   window.addEventListener('click', (e) => {
+    // Avoid bursts when clicking inside modals or buttons with stopPropagation
+    if (e.target.closest('.cv-modal-window') || e.target.closest('.dossier-modal-window')) {
+      return;
+    }
+
     // Determine color from sin card if clicked inside one
     const card = e.target.closest('.card');
     let shockColor = '#f5e08b';
@@ -596,33 +591,155 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // =========================================================================
-  // 8. Real-life Sin Drawer Accordion System ("Bản Luận Giải Đời Thực")
+  // 8. Instant CV Quick-View Modal System
   // =========================================================================
-  const sinToggleBtns = document.querySelectorAll('.btn-sin-toggle');
+  const cvModalBackdrop = document.getElementById('cvModalBackdrop');
+  const cvModalIframe = document.getElementById('cvModalIframe');
+  const cvModalLoader = document.getElementById('cvModalLoader');
+  const cvModalMemberName = document.getElementById('cvModalMemberName');
+  const cvModalSubtitle = document.getElementById('cvModalSubtitle');
+  const cvModalSeal = document.getElementById('cvModalSeal');
+  const cvModalTabLink = document.getElementById('cvModalTabLink');
+  const cvModalClose = document.getElementById('cvModalClose');
 
-  sinToggleBtns.forEach((btn) => {
+  const quickViewBtns = document.querySelectorAll('.btn-cv-quickview');
+
+  function openCvModal(folder, name, role, sin, seal, color) {
+    if (!cvModalBackdrop || !cvModalIframe) return;
+
+    if (cvModalSeal) cvModalSeal.textContent = seal || '⸸';
+    if (cvModalMemberName) cvModalMemberName.textContent = name || '';
+    if (cvModalSubtitle) cvModalSubtitle.textContent = `${sin || ''} • ${role || ''}`;
+    
+    const memberUrl = `members/${folder}/`;
+    if (cvModalTabLink) cvModalTabLink.href = memberUrl;
+
+    // Show loader
+    if (cvModalLoader) cvModalLoader.classList.remove('hidden');
+
+    // Load iframe
+    cvModalIframe.src = memberUrl;
+    cvModalIframe.onload = () => {
+      if (cvModalLoader) cvModalLoader.classList.add('hidden');
+    };
+
+    cvModalBackdrop.classList.add('active');
+    cvModalBackdrop.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeCvModal() {
+    if (!cvModalBackdrop) return;
+    cvModalBackdrop.classList.remove('active');
+    cvModalBackdrop.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    // Reset iframe to release resources & stop any audio/scripts in member CV
+    setTimeout(() => {
+      if (cvModalIframe) cvModalIframe.src = '';
+    }, 300);
+  }
+
+  quickViewBtns.forEach((btn) => {
     btn.addEventListener('click', (e) => {
-      e.stopPropagation(); // Avoid triggering full-page click bursts on toggle
-      const actionsContainer = btn.closest('.card-actions');
-      if (!actionsContainer) return;
-      const drawer = actionsContainer.querySelector('.card-sin-drawer');
-      if (!drawer) return;
+      e.stopPropagation();
+      const folder = btn.getAttribute('data-folder');
+      const name = btn.getAttribute('data-name');
+      const role = btn.getAttribute('data-role');
+      const sin = btn.getAttribute('data-sin');
+      const seal = btn.getAttribute('data-seal');
+      const color = btn.getAttribute('data-color');
+      openCvModal(folder, name, role, sin, seal, color);
+    });
+  });
 
-      const isOpen = drawer.classList.contains('open');
+  if (cvModalClose) {
+    cvModalClose.addEventListener('click', closeCvModal);
+  }
 
-      if (isOpen) {
-        drawer.classList.remove('open');
-        btn.classList.remove('active');
-        btn.setAttribute('aria-expanded', 'false');
-        const textSpan = btn.querySelector('.sin-toggle-left span:last-child');
-        if (textSpan) textSpan.textContent = 'Luận Giải Đời Thực';
-      } else {
-        drawer.classList.add('open');
-        btn.classList.add('active');
-        btn.setAttribute('aria-expanded', 'true');
-        const textSpan = btn.querySelector('.sin-toggle-left span:last-child');
-        if (textSpan) textSpan.textContent = 'Thu Gọn Luận Giải';
+  if (cvModalBackdrop) {
+    cvModalBackdrop.addEventListener('click', (e) => {
+      if (e.target === cvModalBackdrop) {
+        closeCvModal();
       }
     });
+  }
+
+  // =========================================================================
+  // 9. Occult Sin Dossier Modal System ("Luận Giải Đời Thực")
+  // =========================================================================
+  const sinDossierModal = document.getElementById('sinDossierModal');
+  const sinDossierClose = document.getElementById('sinDossierClose');
+  const dossierModalImg = document.getElementById('dossierModalImg');
+  const dossierModalSeal = document.getElementById('dossierModalSeal');
+  const dossierModalBadge = document.getElementById('dossierModalBadge');
+  const dossierModalTitle = document.getElementById('dossierModalTitle');
+  const dossierModalGuardian = document.getElementById('dossierModalGuardian');
+  const dossierModalRole = document.getElementById('dossierModalRole');
+  const dossierModalReal = document.getElementById('dossierModalReal');
+  const dossierModalIt = document.getElementById('dossierModalIt');
+  const dossierModalLore = document.getElementById('dossierModalLore');
+
+  const dossierBtns = document.querySelectorAll('.btn-sin-dossier');
+
+  function openSinDossier(data) {
+    if (!sinDossierModal) return;
+
+    if (dossierModalImg) dossierModalImg.src = data.img || '';
+    if (dossierModalSeal) dossierModalSeal.textContent = data.seal || '⸸';
+    if (dossierModalBadge) dossierModalBadge.textContent = data.badge || '';
+    if (dossierModalTitle) dossierModalTitle.textContent = data.sinname || '';
+    if (dossierModalGuardian) dossierModalGuardian.textContent = data.member || '';
+    if (dossierModalRole) dossierModalRole.textContent = `(${data.role || ''})`;
+    if (dossierModalReal) dossierModalReal.textContent = data.real || '';
+    if (dossierModalIt) dossierModalIt.textContent = data.it || '';
+    if (dossierModalLore) dossierModalLore.textContent = data.lore || '';
+
+    sinDossierModal.classList.add('active');
+    sinDossierModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeSinDossier() {
+    if (!sinDossierModal) return;
+    sinDossierModal.classList.remove('active');
+    sinDossierModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  dossierBtns.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openSinDossier({
+        member: btn.getAttribute('data-member'),
+        role: btn.getAttribute('data-role'),
+        sinname: btn.getAttribute('data-sinname'),
+        badge: btn.getAttribute('data-badge'),
+        seal: btn.getAttribute('data-seal'),
+        img: btn.getAttribute('data-img'),
+        real: btn.getAttribute('data-real'),
+        it: btn.getAttribute('data-it'),
+        lore: btn.getAttribute('data-lore')
+      });
+    });
+  });
+
+  if (sinDossierClose) {
+    sinDossierClose.addEventListener('click', closeSinDossier);
+  }
+
+  if (sinDossierModal) {
+    sinDossierModal.addEventListener('click', (e) => {
+      if (e.target === sinDossierModal) {
+        closeSinDossier();
+      }
+    });
+  }
+
+  // Global ESC Key to close any active modal
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' || e.key === 'Esc') {
+      closeCvModal();
+      closeSinDossier();
+    }
   });
 });
