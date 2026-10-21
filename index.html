@@ -3,32 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thất Nghiệp Đại Tội — Cổng Hồ Sơ Nhóm 7 Thành Viên</title>
-  <meta name="description" content="Trang chủ và danh mục hồ sơ CV cá nhân của nhóm 7 thành viên Thất Nghiệp Đại Tội. Mỗi thành viên sở hữu một khu vực mã nguồn độc lập.">
+  <title>Thất Nghiệp Đại Tội — Đại Điện Vực Thẳm 7 Tội Nhân</title>
+  <meta name="description" content="Trang chủ và cổng lưu trữ hồ sơ CV cá nhân của 7 đại tội nhân nhóm Thất Nghiệp Đại Tội. Không gian hắc ám, huyền bí và độc lập.">
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23e08a46'><path d='M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM11 16h2v2h-2zm0-6h2v4h-2z'/></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d4af37'><polygon points='12 2 15 8 22 9 17 14 18 21 12 17 6 21 7 14 2 9 9 8 12 2'/></svg>">
 </head>
 <body>
 
-  <!-- Top Sticky Navigation -->
+  <!-- Dynamic Horror Canvas (Embers, Dark Mist & Bling Stars) -->
+  <canvas id="horrorCanvas"></canvas>
+
+  <!-- Dark Gothic Vignette -->
+  <div class="vignette-overlay"></div>
+
+  <!-- Top Navigation Bar -->
   <header class="site-header" id="topHeader">
     <div class="container nav-wrap">
-      <a href="./" class="brand-badge" id="brandLink">
-        <div class="brand-icon">⚔️</div>
+      <a href="./" class="brand-badge" id="brandLink" title="Đại Điện Thất Nghiệp Đại Tội">
+        <div class="brand-icon-seal">⸸</div>
         <div class="brand-text">
           <h1>Thất Nghiệp Đại Tội</h1>
-          <span>Team Portfolio &bull; 7 Members</span>
+          <span>THE SEVEN DEADLY SINS &bull; ARCHIVE OF SOULS</span>
         </div>
       </a>
 
       <nav class="nav-actions" aria-label="Điều hướng nhanh">
+        <button class="btn-nav audio-toggle" id="btnAudioToggle" title="Bật/Tắt âm hưởng u tối huyền bí">
+          <span id="audioIcon">🔮</span>
+          <span id="audioText">Âm Hưởng U Tối</span>
+        </button>
+        <a class="btn-nav" href="#workflowSection" id="navRules">
+          <span>📜 Cổ Thư Giới Luật</span>
+        </a>
         <a class="btn-nav" href="members/" id="navMembersDir">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-          <span>Thư mục Members</span>
+          <span>📁 Thư mục Members</span>
         </a>
         <a class="btn-nav primary" href="https://github.com/hoang-nguyen05/That-Nghiep-Dai-Toi" target="_blank" rel="noopener noreferrer" id="navGithub">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          <span>GitHub Repo</span>
+          <span>Khế Ước GitHub ↗</span>
         </a>
       </nav>
     </div>
@@ -37,223 +49,421 @@
   <!-- Hero Section -->
   <main class="container" id="mainContent">
     <section class="hero">
+      <div class="hero-occult-seal" aria-hidden="true"></div>
+
       <div class="hero-tag">
         <span class="dot"></span>
-        <span>Hệ Thống Phân Tách Thư Mục Thành Viên Độc Lập</span>
+        <span>✦ VỰC THẲM NGUYÊN THỦY • PHONG ẤN ĐỘC LẬP ✦</span>
       </div>
-      <h2 class="hero-title">Không gian CV & Đồ án<br><span class="highlight">Thất Nghiệp Đại Tội</span></h2>
+
+      <h2 class="hero-title">
+        <span class="title-top">ĐẠI ĐIỆN VỰC THẲM</span>
+        <span class="highlight-gothic">THẤT NGHIỆP ĐẠI TỘI</span>
+      </h2>
+
+      <div class="hero-divider">
+        <span>✦</span>
+        <span>⸸</span>
+        <span>✦</span>
+      </div>
+
       <p class="hero-desc">
-        Mỗi thành viên sở hữu riêng một thư mục làm việc trong <code>members/</code>. Tự do cấu trúc file HTML, CSS và tài nguyên cá nhân mà không lo đè file hay xung đột mã nguồn.
+        Nơi hội tụ 7 linh hồn mang trong mình 7 đại tội nguyên thủy, nắm giữ những bản giao kèo sinh tử (Hồ sơ CV &amp; Công nghệ). Từng lãnh địa độc lập trong thư mục <code>members/</code>, tự do kiến tạo mà không sợ xung đột hay phong ấn.
       </p>
 
+      <!-- Cursed Altar Statistics -->
       <div class="stats-grid">
         <div class="stat-item">
-          <div class="stat-num">7</div>
-          <div class="stat-label">Tổng thành viên</div>
+          <div class="stat-num active">VII</div>
+          <div class="stat-label">Tội Nhân Hội Tụ</div>
         </div>
         <div class="stat-item">
-          <div class="stat-num active">7</div>
-          <div class="stat-label">CV đã tải lên</div>
+          <div class="stat-num active">VII / VII</div>
+          <div class="stat-label">Bản Huyết Khế CV</div>
         </div>
         <div class="stat-item">
           <div class="stat-num">0</div>
-          <div class="stat-label">Đang chờ nộp</div>
+          <div class="stat-label">Linh Hồn Trễ Hạn</div>
         </div>
       </div>
     </section>
 
     <!-- Filter & Search Toolbar -->
-    <section class="filter-bar" aria-label="Bộ lọc và tìm kiếm thành viên">
+    <section class="filter-bar" aria-label="Bộ lọc và tìm kiếm đại tội nhân">
       <div class="filter-tabs">
-        <button class="filter-btn active" data-filter="all" id="filterAll">Tất cả (7)</button>
-        <button class="filter-btn" data-filter="ready" id="filterReady">Đã có CV (7)</button>
-        <button class="filter-btn" data-filter="pending" id="filterPending">Đang cập nhật (0)</button>
+        <button class="filter-btn active" data-filter="all" id="filterAll">TẤT CẢ (7)</button>
+        <button class="filter-btn" data-filter="lust" id="filterLust">🩸 Dục Vọng</button>
+        <button class="filter-btn" data-filter="pride" id="filterPride">👑 Kiêu Ngạo</button>
+        <button class="filter-btn" data-filter="gluttony" id="filterGluttony">🥩 Phàm Ăn</button>
+        <button class="filter-btn" data-filter="wrath" id="filterWrath">⚔️ Phẫn Nộ</button>
+        <button class="filter-btn" data-filter="envy" id="filterEnvy">👁️ Đố Kỵ</button>
+        <button class="filter-btn" data-filter="greed" id="filterGreed">⚜️ Tham Lam</button>
+        <button class="filter-btn" data-filter="sloth" id="filterSloth">⛓️ Lười Biếng</button>
       </div>
 
       <div class="search-box">
         <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-        <input type="text" class="search-input" id="memberSearch" placeholder="Tìm theo tên thành viên, vai trò hoặc đại tội (dục vọng, kiêu ngạo...)..." aria-label="Tìm thành viên">
+        <input type="text" class="search-input" id="memberSearch" placeholder="Triệu hồi theo danh tính, đại tội (Dục Vọng, Asmodeus, Kiêu Ngạo...)..." aria-label="Tìm tội đồ">
       </div>
     </section>
 
     <!-- 7 Member Cards Grid -->
-    <section class="members-grid" id="membersGrid" aria-label="Danh sách 7 thành viên">
+    <section class="members-grid" id="membersGrid" aria-label="Danh sách 7 đại tội nhân">
 
       <!-- 1. Nguyễn Đắc Hoàng - Dục Vọng -->
-      <article class="card" data-status="ready" data-name="nguyễn đắc hoàng nguyen dac hoang" data-role="trợ giảng tin học web developer" data-sin="dục vọng duc vong lust">
+      <article class="card" data-sin-type="lust" data-status="ready" data-name="nguyễn đắc hoàng nguyen dac hoang" data-role="trợ giảng tin học web developer" data-sin="dục vọng duc vong lust asmodeus ái dục">
+        <div class="card-glow-halo"></div>
+        <div class="card-sheen"></div>
+        <div class="card-corner tl"></div>
+        <div class="card-corner tr"></div>
+        <div class="card-corner bl"></div>
+        <div class="card-corner br"></div>
+
         <div class="card-header">
-          <div class="card-avatar">H</div>
+          <div class="card-avatar-wrapper">
+            <div class="card-avatar-rune"></div>
+            <div class="card-avatar">H</div>
+            <span class="sin-symbol-tag" title="Huyết Ngọc Ái Dục">🩸</span>
+          </div>
           <div class="card-header-tags">
-            <span class="badge-sin sin-lust" title="Đại Tội: Dục Vọng">💋 Dục Vọng</span>
-            <span class="badge-status ready">Đã có CV</span>
+            <span class="badge-sin sin-lust" title="Đại Tội: Dục Vọng (Lust)">
+              <span class="sin-gem"></span>
+              <span>DỤC VỌNG</span>
+              <span class="sin-latin">LUST</span>
+            </span>
+            <span class="badge-status ready">
+              <span class="status-dot"></span> ĐÃ KHẮC CV
+            </span>
           </div>
         </div>
-        <h3 class="card-name">Nguyễn Đắc Hoàng</h3>
-        <p class="card-role">Trợ giảng Tin Học · Web Developer</p>
-        <div class="card-folder">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-          <span>members/nguyen-dac-hoang/</span>
+
+        <div class="card-body">
+          <div class="card-alias-label">ĐẠI TỘI THỨ NHẤT &bull; ASMODEUS</div>
+          <h3 class="card-name">Nguyễn Đắc Hoàng</h3>
+          <p class="card-role">Trợ giảng Tin Học · Web Developer</p>
+          <div class="card-folder">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+            <code>members/nguyen-dac-hoang/</code>
+          </div>
         </div>
+
         <div class="card-actions">
-          <a class="btn-cv" href="members/nguyen-dac-hoang/" id="btnCvNguyenDacHoang">Xem CV trực tuyến →</a>
+          <a class="btn-cv-horror" href="members/nguyen-dac-hoang/" id="btnCvNguyenDacHoang">
+            <span>KHÁM PHÁ BẢN CV</span>
+            <span class="btn-rune">✦</span>
+          </a>
         </div>
       </article>
 
       <!-- 2. Hoàng Bắc - Kiêu Ngạo -->
-      <article class="card" data-status="ready" data-name="hoàng bắc hoang bac" data-role="sinh viên cntt frontend web developer" data-sin="kiêu ngạo kieu ngao pride">
+      <article class="card" data-sin-type="pride" data-status="ready" data-name="hoàng bắc hoang bac" data-role="sinh viên cntt frontend web developer" data-sin="kiêu ngạo kieu ngao pride lucifer ngạo mạn">
+        <div class="card-glow-halo"></div>
+        <div class="card-sheen"></div>
+        <div class="card-corner tl"></div>
+        <div class="card-corner tr"></div>
+        <div class="card-corner bl"></div>
+        <div class="card-corner br"></div>
+
         <div class="card-header">
-          <div class="card-avatar">B</div>
+          <div class="card-avatar-wrapper">
+            <div class="card-avatar-rune"></div>
+            <div class="card-avatar">B</div>
+            <span class="sin-symbol-tag" title="Vương Miện Ngạo Mạn">👑</span>
+          </div>
           <div class="card-header-tags">
-            <span class="badge-sin sin-pride" title="Đại Tội: Kiêu Ngạo">👑 Kiêu Ngạo</span>
-            <span class="badge-status ready">Đã có CV</span>
+            <span class="badge-sin sin-pride" title="Đại Tội: Kiêu Ngạo (Pride)">
+              <span class="sin-gem"></span>
+              <span>KIÊU NGẠO</span>
+              <span class="sin-latin">PRIDE</span>
+            </span>
+            <span class="badge-status ready">
+              <span class="status-dot"></span> ĐÃ KHẮC CV
+            </span>
           </div>
         </div>
-        <h3 class="card-name">Hoàng Bắc</h3>
-        <p class="card-role">Sinh viên CNTT · Frontend / Web Developer</p>
-        <div class="card-folder">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-          <span>members/hoang-bac/</span>
+
+        <div class="card-body">
+          <div class="card-alias-label">ĐẠI TỘI THỨ HAI &bull; LUCIFER</div>
+          <h3 class="card-name">Hoàng Bắc</h3>
+          <p class="card-role">Sinh viên CNTT · Frontend / Web Developer</p>
+          <div class="card-folder">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+            <code>members/hoang-bac/</code>
+          </div>
         </div>
+
         <div class="card-actions">
-          <a class="btn-cv" href="members/hoang-bac/" id="btnCvHoangBac">Xem CV trực tuyến →</a>
+          <a class="btn-cv-horror" href="members/hoang-bac/" id="btnCvHoangBac">
+            <span>KHÁM PHÁ BẢN CV</span>
+            <span class="btn-rune">✦</span>
+          </a>
         </div>
       </article>
 
       <!-- 3. Lường Thị Hạnh - Phàm Ăn -->
-      <article class="card" data-status="ready" data-name="lường thị hạnh lương thị hạnh lường hạnh luong thi hanh" data-role="kỹ sư phần mềm full-stack developer react node typescript" data-sin="phàm ăn pham an gluttony">
+      <article class="card" data-sin-type="gluttony" data-status="ready" data-name="lường thị hạnh lương thị hạnh lường hạnh luong thi hanh" data-role="kỹ sư phần mềm full-stack developer react node typescript" data-sin="phàm ăn pham an gluttony beelzebub bạo thực">
+        <div class="card-glow-halo"></div>
+        <div class="card-sheen"></div>
+        <div class="card-corner tl"></div>
+        <div class="card-corner tr"></div>
+        <div class="card-corner bl"></div>
+        <div class="card-corner br"></div>
+
         <div class="card-header">
-          <div class="card-avatar">H</div>
+          <div class="card-avatar-wrapper">
+            <div class="card-avatar-rune"></div>
+            <div class="card-avatar">H</div>
+            <span class="sin-symbol-tag" title="Ngọn Lửa Bạo Thực">🥩</span>
+          </div>
           <div class="card-header-tags">
-            <span class="badge-sin sin-gluttony" title="Đại Tội: Phàm Ăn">🍖 Phàm Ăn</span>
-            <span class="badge-status ready">Đã có CV</span>
+            <span class="badge-sin sin-gluttony" title="Đại Tội: Phàm Ăn (Gluttony)">
+              <span class="sin-gem"></span>
+              <span>PHÀM ĂN</span>
+              <span class="sin-latin">GLUTTONY</span>
+            </span>
+            <span class="badge-status ready">
+              <span class="status-dot"></span> ĐÃ KHẮC CV
+            </span>
           </div>
         </div>
-        <h3 class="card-name">Lường Thị Hạnh</h3>
-        <p class="card-role">Kỹ Sư Phần Mềm · Full-Stack Developer</p>
-        <div class="card-folder">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-          <span>members/luong-thi-hanh/</span>
+
+        <div class="card-body">
+          <div class="card-alias-label">ĐẠI TỘI THỨ BA &bull; BEELZEBUB</div>
+          <h3 class="card-name">Lường Thị Hạnh</h3>
+          <p class="card-role">Kỹ Sư Phần Mềm · Full-Stack Developer</p>
+          <div class="card-folder">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+            <code>members/luong-thi-hanh/</code>
+          </div>
         </div>
+
         <div class="card-actions">
-          <a class="btn-cv" href="members/luong-thi-hanh/" id="btnCvLuongThiHanh">Xem CV trực tuyến →</a>
+          <a class="btn-cv-horror" href="members/luong-thi-hanh/" id="btnCvLuongThiHanh">
+            <span>KHÁM PHÁ BẢN CV</span>
+            <span class="btn-rune">✦</span>
+          </a>
         </div>
       </article>
 
       <!-- 4. Dương Tuấn Hoàng - Phẫn Nộ -->
-      <article class="card" data-status="ready" data-name="dương tuấn hoàng duong tuan hoang" data-role="frontend responsive accessibility web developer tv04" data-sin="phẫn nộ phan no phẫn no wrath">
+      <article class="card" data-sin-type="wrath" data-status="ready" data-name="dương tuấn hoàng duong tuan hoang" data-role="frontend responsive accessibility web developer tv04" data-sin="phẫn nộ phan no wrath satan nộ hỏa">
+        <div class="card-glow-halo"></div>
+        <div class="card-sheen"></div>
+        <div class="card-corner tl"></div>
+        <div class="card-corner tr"></div>
+        <div class="card-corner bl"></div>
+        <div class="card-corner br"></div>
+
         <div class="card-header">
-          <div class="card-avatar">H</div>
+          <div class="card-avatar-wrapper">
+            <div class="card-avatar-rune"></div>
+            <div class="card-avatar">H</div>
+            <span class="sin-symbol-tag" title="Huyết Kiếm Nộ Hỏa">⚔️</span>
+          </div>
           <div class="card-header-tags">
-            <span class="badge-sin sin-wrath" title="Đại Tội: Phẫn Nộ">🔥 Phẫn Nộ</span>
-            <span class="badge-status ready">Đã có CV</span>
+            <span class="badge-sin sin-wrath" title="Đại Tội: Phẫn Nộ (Wrath)">
+              <span class="sin-gem"></span>
+              <span>PHẪN NỘ</span>
+              <span class="sin-latin">WRATH</span>
+            </span>
+            <span class="badge-status ready">
+              <span class="status-dot"></span> ĐÃ KHẮC CV
+            </span>
           </div>
         </div>
-        <h3 class="card-name">Dương Tuấn Hoàng</h3>
-        <p class="card-role">Responsive &amp; Accessibility Developer</p>
-        <div class="card-folder">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-          <span>members/duong-tuan-hoang/</span>
+
+        <div class="card-body">
+          <div class="card-alias-label">ĐẠI TỘI THỨ TƯ &bull; SATAN</div>
+          <h3 class="card-name">Dương Tuấn Hoàng</h3>
+          <p class="card-role">Responsive &amp; Accessibility Developer</p>
+          <div class="card-folder">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+            <code>members/duong-tuan-hoang/</code>
+          </div>
         </div>
+
         <div class="card-actions">
-          <a class="btn-cv" href="members/duong-tuan-hoang/" id="btnCvDuongTuanHoang">Xem CV trực tuyến →</a>
+          <a class="btn-cv-horror" href="members/duong-tuan-hoang/" id="btnCvDuongTuanHoang">
+            <span>KHÁM PHÁ BẢN CV</span>
+            <span class="btn-rune">✦</span>
+          </a>
         </div>
       </article>
 
       <!-- 5. Nguyễn Huy Hoàng - Đố Kỵ -->
-      <article class="card" data-status="ready" data-name="nguyễn huy hoàng nguyen huy hoang" data-role="data analyst phân tích dữ liệu python django sqlite" data-sin="đố kỵ do ky do ki envy">
+      <article class="card" data-sin-type="envy" data-status="ready" data-name="nguyễn huy hoàng nguyen huy hoang" data-role="data analyst phân tích dữ liệu python django sqlite" data-sin="đố kỵ do ky do ki envy leviathan tật đố">
+        <div class="card-glow-halo"></div>
+        <div class="card-sheen"></div>
+        <div class="card-corner tl"></div>
+        <div class="card-corner tr"></div>
+        <div class="card-corner bl"></div>
+        <div class="card-corner br"></div>
+
         <div class="card-header">
-          <div class="card-avatar">H</div>
+          <div class="card-avatar-wrapper">
+            <div class="card-avatar-rune"></div>
+            <div class="card-avatar">H</div>
+            <span class="sin-symbol-tag" title="Nhãn Ma Tật Đố">👁️</span>
+          </div>
           <div class="card-header-tags">
-            <span class="badge-sin sin-envy" title="Đại Tội: Đố Kỵ">🐍 Đố Kỵ</span>
-            <span class="badge-status ready">Đã có CV</span>
+            <span class="badge-sin sin-envy" title="Đại Tội: Đố Kỵ (Envy)">
+              <span class="sin-gem"></span>
+              <span>ĐỐ KỴ</span>
+              <span class="sin-latin">ENVY</span>
+            </span>
+            <span class="badge-status ready">
+              <span class="status-dot"></span> ĐÃ KHẮC CV
+            </span>
           </div>
         </div>
-        <h3 class="card-name">Nguyễn Huy Hoàng</h3>
-        <p class="card-role">Data Analyst</p>
-        <div class="card-folder">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-          <span>members/nguyen-huy-hoang/</span>
+
+        <div class="card-body">
+          <div class="card-alias-label">ĐẠI TỘI THỨ NĂM &bull; LEVIATHAN</div>
+          <h3 class="card-name">Nguyễn Huy Hoàng</h3>
+          <p class="card-role">Data Analyst</p>
+          <div class="card-folder">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+            <code>members/nguyen-huy-hoang/</code>
+          </div>
         </div>
+
         <div class="card-actions">
-          <a class="btn-cv" href="members/nguyen-huy-hoang/" id="btnCvNguyenHuyHoang">Xem CV trực tuyến →</a>
+          <a class="btn-cv-horror" href="members/nguyen-huy-hoang/" id="btnCvNguyenHuyHoang">
+            <span>KHÁM PHÁ BẢN CV</span>
+            <span class="btn-rune">✦</span>
+          </a>
         </div>
       </article>
 
       <!-- 6. Nông Lâm Ngọc Sơn - Tham Lam -->
-      <article class="card" data-status="ready" data-name="nông lâm ngọc sơn nong lam ngoc son" data-role="network operations center noc hạ tầng mạng cisco mikrotik" data-sin="tham lam greed">
+      <article class="card" data-sin-type="greed" data-status="ready" data-name="nông lâm ngọc sơn nong lam ngoc son" data-role="network operations center noc hạ tầng mạng cisco mikrotik" data-sin="tham lam greed mammon hoàng kim">
+        <div class="card-glow-halo"></div>
+        <div class="card-sheen"></div>
+        <div class="card-corner tl"></div>
+        <div class="card-corner tr"></div>
+        <div class="card-corner bl"></div>
+        <div class="card-corner br"></div>
+
         <div class="card-header">
-          <div class="card-avatar">S</div>
+          <div class="card-avatar-wrapper">
+            <div class="card-avatar-rune"></div>
+            <div class="card-avatar">S</div>
+            <span class="sin-symbol-tag" title="Thánh Vật Hoàng Kim">⚜️</span>
+          </div>
           <div class="card-header-tags">
-            <span class="badge-sin sin-greed" title="Đại Tội: Tham Lam">💰 Tham Lam</span>
-            <span class="badge-status ready">Đã có CV</span>
+            <span class="badge-sin sin-greed" title="Đại Tội: Tham Lam (Greed)">
+              <span class="sin-gem"></span>
+              <span>THAM LAM</span>
+              <span class="sin-latin">GREED</span>
+            </span>
+            <span class="badge-status ready">
+              <span class="status-dot"></span> ĐÃ KHẮC CV
+            </span>
           </div>
         </div>
-        <h3 class="card-name">Nông Lâm Ngọc Sơn</h3>
-        <p class="card-role">Network Operations Center (NOC)</p>
-        <div class="card-folder">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-          <span>members/nong-lam-ngoc-son/</span>
+
+        <div class="card-body">
+          <div class="card-alias-label">ĐẠI TỘI THỨ SÁU &bull; MAMMON</div>
+          <h3 class="card-name">Nông Lâm Ngọc Sơn</h3>
+          <p class="card-role">Network Operations Center (NOC)</p>
+          <div class="card-folder">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+            <code>members/nong-lam-ngoc-son/</code>
+          </div>
         </div>
+
         <div class="card-actions">
-          <a class="btn-cv" href="members/nong-lam-ngoc-son/" id="btnCvNongLamNgocSon">Xem CV trực tuyến →</a>
+          <a class="btn-cv-horror" href="members/nong-lam-ngoc-son/" id="btnCvNongLamNgocSon">
+            <span>KHÁM PHÁ BẢN CV</span>
+            <span class="btn-rune">✦</span>
+          </a>
         </div>
       </article>
 
       <!-- 7. Vi Anh Quân - Lười Biếng -->
-      <article class="card" data-status="ready" data-name="vi anh quân vi anh quan" data-role="lập trình viên web sinh viên cntt html css javascript tv07" data-sin="lười biếng luoi bieng sloth">
+      <article class="card" data-sin-type="sloth" data-status="ready" data-name="vi anh quân vi anh quan" data-role="lập trình viên web sinh viên cntt html css javascript tv07" data-sin="lười biếng luoi bieng sloth belphegor đọa lạc">
+        <div class="card-glow-halo"></div>
+        <div class="card-sheen"></div>
+        <div class="card-corner tl"></div>
+        <div class="card-corner tr"></div>
+        <div class="card-corner bl"></div>
+        <div class="card-corner br"></div>
+
         <div class="card-header">
-          <div class="card-avatar">Q</div>
+          <div class="card-avatar-wrapper">
+            <div class="card-avatar-rune"></div>
+            <div class="card-avatar">Q</div>
+            <span class="sin-symbol-tag" title="Xiềng Xích Đọa Lạc">⛓️</span>
+          </div>
           <div class="card-header-tags">
-            <span class="badge-sin sin-sloth" title="Đại Tội: Lười Biếng">🦥 Lười Biếng</span>
-            <span class="badge-status ready">Đã có CV</span>
+            <span class="badge-sin sin-sloth" title="Đại Tội: Lười Biếng (Sloth)">
+              <span class="sin-gem"></span>
+              <span>LƯỜI BIẾNG</span>
+              <span class="sin-latin">SLOTH</span>
+            </span>
+            <span class="badge-status ready">
+              <span class="status-dot"></span> ĐÃ KHẮC CV
+            </span>
           </div>
         </div>
-        <h3 class="card-name">Vi Anh Quân</h3>
-        <p class="card-role">Lập trình viên Web · Frontend Developer</p>
-        <div class="card-folder">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-          <span>members/vi-anh-quan/</span>
+
+        <div class="card-body">
+          <div class="card-alias-label">ĐẠI TỘI THỨ BẢY &bull; BELPHEGOR</div>
+          <h3 class="card-name">Vi Anh Quân</h3>
+          <p class="card-role">Lập trình viên Web · Frontend Developer</p>
+          <div class="card-folder">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+            <code>members/vi-anh-quan/</code>
+          </div>
         </div>
+
         <div class="card-actions">
-          <a class="btn-cv" href="members/vi-anh-quan/" id="btnCvViAnhQuan">Xem CV trực tuyến →</a>
+          <a class="btn-cv-horror" href="members/vi-anh-quan/" id="btnCvViAnhQuan">
+            <span>KHÁM PHÁ BẢN CV</span>
+            <span class="btn-rune">✦</span>
+          </a>
         </div>
       </article>
 
     </section>
 
     <!-- Empty search notice -->
-    <div id="noResults" style="display: none; text-align: center; padding: 40px; color: var(--text-muted);">
-      Không tìm thấy thành viên nào khớp với từ khóa tìm kiếm.
+    <div id="noResults" style="display: none; text-align: center; padding: 50px 20px; color: var(--gold-primary); font-family: var(--font-gothic);">
+      <div style="font-size: 32px; margin-bottom: 10px;">🕯️</div>
+      Không tìm thấy đại tội nhân nào khớp với linh ảnh tìm kiếm.
     </div>
 
-    <!-- Workflow & Guide Section -->
-    <section class="info-section">
-      <h3 class="info-title">🛠️ Quy Tắc Làm Việc Của Nhóm</h3>
-      <p class="info-desc">Để tránh xung đột Git (conflict) và đảm bảo mỗi thành viên có không gian độc lập:</p>
+    <!-- Workflow & Guide Section (Ancient Gothic Tablets) -->
+    <section class="info-section" id="workflowSection">
+      <h3 class="info-title">
+        <span>📜 Cổ Thư Giới Luật</span>
+        <span style="font-size: 14px; opacity: 0.7;">&bull; BẢN ĐỒNG THUẬN BẤT KHẢ XÂM PHẠM</span>
+      </h3>
+      <p class="info-desc">Mọi tội nhân khi gia nhập dự án đều phải tuân theo 4 điều ước định tối thượng để tránh xung đột mã nguồn (Conflict):</p>
 
       <div class="workflow-steps">
         <div class="step-card">
-          <div class="step-num">BƯỚC 01</div>
-          <div class="step-title">Vào đúng thư mục</div>
-          <p class="step-text">Chỉ làm việc trong thư mục mang tên mình tại <code>members/[tên-thành-viên]/</code>.</p>
+          <div class="step-num">ĐIỀU ƯỚC I</div>
+          <div class="step-title">Bất Xâm Lãnh Địa</div>
+          <p class="step-text">Chỉ được phép thi triển ma pháp và lưu trữ tài nguyên trong lãnh địa cá nhân tại <code>members/[tên-thành-viên]/</code>.</p>
         </div>
 
         <div class="step-card">
-          <div class="step-num">BƯỚC 02</div>
-          <div class="step-title">Tạo file CV riêng</div>
-          <p class="step-text">Tạo file <code>index.html</code>, <code>style.css</code> và ảnh trong thư mục của bạn.</p>
+          <div class="step-num">ĐIỀU ƯỚC II</div>
+          <div class="step-title">Tạo Bản Huyết Khế</div>
+          <p class="step-text">Khắc họa <code>index.html</code>, <code>style.css</code> cùng các ấn ký hình ảnh độc lập mà không can thiệp vào các thư mục khác.</p>
         </div>
 
         <div class="step-card">
-          <div class="step-num">BƯỚC 03</div>
-          <div class="step-title">Tạo Branch & PR</div>
-          <p class="step-text">Tạo nhánh riêng từ <code>main</code>, commit thay đổi và gửi Pull Request để trưởng nhóm duyệt.</p>
+          <div class="step-num">ĐIỀU ƯỚC III</div>
+          <div class="step-title">Triệu Hồi Chi Nhánh</div>
+          <p class="step-text">Tách nhánh từ <code>main</code>, commit ấn ký và tạo Pull Request để trưởng nhóm thẩm duyệt trước khi nhập dòng chính.</p>
         </div>
 
         <div class="step-card">
-          <div class="step-num">BƯỚC 04</div>
-          <div class="step-title">Tự động triển khai</div>
-          <p class="step-text">Sau khi merge vào nhánh <code>main</code>, GitHub Pages / Cloudflare Pages sẽ tự cập nhật trang web.</p>
+          <div class="step-num">ĐIỀU ƯỚC IV</div>
+          <div class="step-title">Thi Thể Hóa Toàn Cầu</div>
+          <p class="step-text">Sau khi hòa vào <code>main</code>, thần vực Cloudflare Pages sẽ tự động kích hoạt ma trận triển khai lên mạng lưới thế giới.</p>
         </div>
       </div>
     </section>
@@ -262,11 +472,16 @@
   <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container">
-      <p>© 2026 Dự Án <strong>Thất Nghiệp Đại Tội</strong> &bull; Đồ án nhóm 7 thành viên.</p>
-      <p style="margin-top: 6px;">
-        <a href="TEAM_GUIDE.md">Quy trình làm việc (TEAM_GUIDE.md)</a> &bull;
-        <a href="members/SOURCES.md">Nguồn CV (SOURCES.md)</a> &bull;
-        <a href="https://github.com/users/hoang-nguyen05/projects/1" target="_blank" rel="noopener noreferrer">Bảng phân công dự án ↗</a>
+      <p style="font-family: var(--font-gothic); letter-spacing: 0.1em; font-weight: 700; color: #d4af37;">
+        ✦ ĐẠI ĐIỆN VỰC THẲM &bull; THẤT NGHIỆP ĐẠI TỘI ✦
+      </p>
+      <p style="margin-top: 8px; color: var(--text-muted); font-size: 13px;">
+        © 2026 Bản quyền thuộc về Liên Minh 7 Tội Nhân &bull; Tự do sáng tạo &bull; Phân tách hoàn toàn.
+      </p>
+      <p style="margin-top: 12px; font-size: 12.5px;">
+        <a href="TEAM_GUIDE.md">Quy Trình Hoạt Động (TEAM_GUIDE.md)</a> &bull;
+        <a href="members/SOURCES.md">Cội Nguồn Hồ Sơ (SOURCES.md)</a> &bull;
+        <a href="https://github.com/users/hoang-nguyen05/projects/1" target="_blank" rel="noopener noreferrer">Bảng Phân Công Nhiệm Vụ ↗</a>
       </p>
     </div>
   </footer>
