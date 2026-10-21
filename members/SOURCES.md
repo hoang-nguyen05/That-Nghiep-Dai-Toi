@@ -10,7 +10,7 @@ Các trang được nhập theo yêu cầu của chủ dự án. Giữ nội dun
 | `duong-tuan-hoang/` | Dương Tuấn Hoàng | Cung cấp trực tiếp từ thành viên | Giao diện Aptos warm style, hỗ trợ inline edit (localStorage) và chuẩn in PDF A4 |
 | `nguyen-huy-hoang/` | Nguyễn Huy Hoàng | Commit `7eae7dd` | Tải lên index.html, style.css chuyên ngành Data Analyst |
 | `nong-lam-ngoc-son/` | Nông Lâm Ngọc Sơn | https://github.com/SEN-Elevenz/your-uncle-.git | Nhập cv.html và cv.css từ repo your-uncle- của thành viên |
-| `vi-anh-quan/` | Vi Anh Quân | Đang cập nhật | Thư mục riêng để thành viên tự tải lên CV |
+| `vi-anh-quan/` | Vi Anh Quân | Commit `08dd664` | Tải lên index.html, style.css vị trí Lập trình viên Web |
 
 - Mỗi thành viên có một thư mục riêng biệt trong `members/` để tự quản lý `index.html`, `style.css` và tài nguyên.
 - Không sửa đè file của thành viên khác.

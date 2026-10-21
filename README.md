@@ -15,7 +15,7 @@
 | 04 | Dương Tuấn Hoàng | `members/duong-tuan-hoang/` | [Xem CV](members/duong-tuan-hoang/index.html) |
 | 05 | Nguyễn Huy Hoàng | `members/nguyen-huy-hoang/` | [Xem CV](members/nguyen-huy-hoang/index.html) |
 | 06 | Nông Lâm Ngọc Sơn | `members/nong-lam-ngoc-son/` | [Xem CV](members/nong-lam-ngoc-son/index.html) |
-| 07 | Vi Anh Quân | `members/vi-anh-quan/` | Đang cập nhật |
+| 07 | Vi Anh Quân | `members/vi-anh-quan/` | [Xem CV](members/vi-anh-quan/index.html) |
 
 > **Quy tắc làm việc:** Mỗi thành viên sở hữu một thư mục riêng biệt trong `members/` để tự quản lý file `index.html`, `style.css` và tài nguyên cá nhân, hoàn toàn không bị xung đột mã nguồn khi commit và tạo Pull Request.
 
@@ -55,10 +55,18 @@
 │   ├── nong-lam-ngoc-son/      # Không gian CV riêng của Nông Lâm Ngọc Sơn
 │   └── vi-anh-quan/            # Không gian CV riêng của Vi Anh Quân
 ├── assets/                     # Tài nguyên dùng chung
+├── start.bat                   # File khởi chạy dự án nhanh bằng 1 click
 └── README.md                   # Tài liệu hướng dẫn dự án
 ```
 
 ---
+
+## ⚡ Khởi Chạy Nhanh Dự Án (1-Click)
+
+Bạn chỉ cần **nhấp đúp chuột vào file `start.bat`** trong thư mục gốc của dự án:
+- Tự động bật máy chủ cục bộ và mở ngay trang web trên trình duyệt mặc định (`http://localhost:8080`).
+- Nếu máy tính chưa cài Python, file sẽ tự động mở trực tiếp `index.html` để xem ngay lập tức.
+
 
 ## 🚀 Triển Khai Lên Web (Deployment)
 
