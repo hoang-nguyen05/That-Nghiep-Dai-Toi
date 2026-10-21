@@ -105,6 +105,31 @@ body {
   z-index: 1;
 }
 
+/* Occult Lightning Flash Overlay */
+.lightning-flash {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0;
+  background: radial-gradient(circle at 50% 25%, rgba(255, 255, 255, 0.9) 0%, rgba(192, 132, 252, 0.45) 35%, rgba(244, 63, 94, 0.3) 65%, transparent 100%);
+  mix-blend-mode: screen;
+}
+
+.lightning-flash.lightning-active {
+  animation: lightningStrobe 0.45s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+}
+
+@keyframes lightningStrobe {
+  0% { opacity: 0; }
+  10% { opacity: 0.95; }
+  22% { opacity: 0.12; }
+  34% { opacity: 0.88; }
+  45% { opacity: 0.3; }
+  60% { opacity: 0.75; }
+  100% { opacity: 0; }
+}
+
 /* Mouse Sparkle Trails */
 .mouse-sparkle {
   position: fixed;
@@ -124,6 +149,57 @@ body {
   100% {
     opacity: 0;
     transform: translate(var(--drift-x, 0px), var(--drift-y, -25px)) scale(0.2) rotate(45deg);
+  }
+}
+
+/* Horror Click Shockwave */
+.click-shockwave {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%) scale(0);
+  border: 2px solid var(--shockwave-color, #f5e08b);
+  box-shadow: 0 0 24px var(--shockwave-color, rgba(212, 175, 55, 0.8)), inset 0 0 16px var(--shockwave-color, rgba(212, 175, 55, 0.5));
+  animation: shockwaveExpand 0.65s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+}
+
+@keyframes shockwaveExpand {
+  0% {
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.2);
+  }
+  60% {
+    opacity: 0.85;
+  }
+  100% {
+    width: 240px;
+    height: 240px;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Burst Sparkle Particles */
+.burst-spark {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  font-weight: 800;
+  transform: translate(-50%, -50%);
+  animation: burstFly 0.75s cubic-bezier(0.15, 0.85, 0.35, 1) forwards;
+}
+
+@keyframes burstFly {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1.3) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--burst-x, 0px), var(--burst-y, 0px)) scale(0.1) rotate(var(--burst-rot, 180deg));
   }
 }
 
@@ -387,6 +463,30 @@ header.site-header {
   display: inline-block;
   position: relative;
   filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.45));
+  animation: demonicHeartbeat 4.8s ease-in-out infinite;
+}
+
+@keyframes demonicHeartbeat {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 22px rgba(212, 175, 55, 0.45));
+  }
+  12% {
+    transform: scale(1.025);
+    filter: drop-shadow(0 0 32px rgba(244, 63, 94, 0.75)) drop-shadow(0 0 16px rgba(212, 175, 55, 0.8));
+  }
+  22% {
+    transform: scale(1.008);
+    filter: drop-shadow(0 0 24px rgba(212, 175, 55, 0.5));
+  }
+  32% {
+    transform: scale(1.035);
+    filter: drop-shadow(0 0 38px rgba(244, 63, 94, 0.85)) drop-shadow(0 0 22px rgba(255, 240, 180, 0.9));
+  }
+  46% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 22px rgba(212, 175, 55, 0.45));
+  }
 }
 
 .hero-divider {
@@ -600,6 +700,124 @@ header.site-header {
   cursor: default;
 }
 
+/* Rotating Cursed Flame Border */
+.card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    var(--sin-border-color, #d4af37) 45deg,
+    #ff1a53 90deg,
+    transparent 160deg,
+    var(--sin-border-color, #d4af37) 225deg,
+    #ffffff 280deg,
+    transparent 360deg
+  );
+  z-index: 1;
+  opacity: 0.45;
+  transition: opacity 0.4s ease;
+  animation: spinCardBorder 9s linear infinite;
+  pointer-events: none;
+}
+
+.card:hover::before {
+  opacity: 0.95;
+  animation-duration: 3.5s;
+  filter: drop-shadow(0 0 16px var(--sin-glow, rgba(212, 175, 55, 0.6)));
+}
+
+/* Inner Background Shield so only the outer rim glows */
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 1.5px;
+  border-radius: calc(var(--radius-card) - 1.5px);
+  background: linear-gradient(180deg, rgba(14, 13, 22, 0.94) 0%, rgba(8, 7, 12, 0.98) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Ensure all card elements sit safely above the inner dark shield */
+.card > * {
+  position: relative;
+  z-index: 4;
+}
+
+@keyframes spinCardBorder {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Anamorphic Cursed Star Flare ("Horror Bling-Bling") */
+.sin-star-flare {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  font-size: 15px;
+  color: var(--sin-border-color, var(--gold-light));
+  text-shadow: 0 0 10px var(--sin-glow, rgba(212, 175, 55, 0.8)), 0 0 18px #ffffff;
+  pointer-events: none;
+  z-index: 6;
+  opacity: 0.85;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: flareTwinkle 3.6s ease-in-out infinite;
+}
+
+/* Anamorphic Horizontal Optical Streak */
+.sin-star-flare::before {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, var(--sin-border-color, var(--gold-light)), #ffffff, var(--sin-border-color, var(--gold-light)), transparent);
+  box-shadow: 0 0 10px var(--sin-glow, rgba(212, 175, 55, 0.9));
+  transform: scaleX(0.7);
+  transition: transform 0.3s ease;
+}
+
+/* Anamorphic Vertical Needle Streak */
+.sin-star-flare::after {
+  content: "";
+  position: absolute;
+  width: 1.5px;
+  height: 36px;
+  background: linear-gradient(180deg, transparent, var(--sin-border-color, var(--gold-light)), #ffffff, var(--sin-border-color, var(--gold-light)), transparent);
+  box-shadow: 0 0 10px var(--sin-glow, rgba(212, 175, 55, 0.9));
+  transform: scaleY(0.7);
+  transition: transform 0.3s ease;
+}
+
+.card:hover .sin-star-flare {
+  opacity: 1;
+  animation-duration: 1.6s;
+}
+
+.card:hover .sin-star-flare::before {
+  transform: scaleX(1.4);
+}
+
+.card:hover .sin-star-flare::after {
+  transform: scaleY(1.35);
+}
+
+@keyframes flareTwinkle {
+  0%, 100% {
+    transform: rotate(0deg) scale(0.9);
+    opacity: 0.65;
+  }
+  50% {
+    transform: rotate(45deg) scale(1.3);
+    opacity: 1;
+  }
+}
+
 /* Gilded 4-Corner Accents */
 .card-corner {
   position: absolute;
@@ -633,7 +851,7 @@ header.site-header {
   bottom: 0;
   background: radial-gradient(circle 280px at var(--mouse-x, 50%) var(--mouse-y, 50%), var(--card-glow-color, rgba(212, 175, 55, 0.15)), transparent 70%);
   pointer-events: none;
-  z-index: 2;
+  z-index: 3;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -769,6 +987,26 @@ header.site-header {
   white-space: nowrap;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
   transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.badge-sin::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.65), transparent);
+  transform: skewX(-20deg);
+  animation: badgeBling 3.8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes badgeBling {
+  0%, 70% { left: -120%; }
+  100% { left: 220%; }
 }
 
 .badge-sin .sin-gem {
