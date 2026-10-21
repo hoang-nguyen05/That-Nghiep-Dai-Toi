@@ -603,9 +603,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const cvModalClose = document.getElementById('cvModalClose');
 
   const quickViewBtns = document.querySelectorAll('.btn-cv-quickview');
+  let cvCloseTimer;
+  let cvReturnFocus;
 
   function openCvModal(folder, name, role, sin, seal, color) {
     if (!cvModalBackdrop || !cvModalIframe) return;
+    clearTimeout(cvCloseTimer);
+    cvReturnFocus = document.activeElement;
 
     if (cvModalSeal) cvModalSeal.textContent = seal || '⸸';
     if (cvModalMemberName) cvModalMemberName.textContent = name || '';
@@ -618,26 +622,53 @@ document.addEventListener('DOMContentLoaded', () => {
     if (cvModalLoader) cvModalLoader.classList.remove('hidden');
 
     // Load iframe
-    cvModalIframe.src = memberUrl;
     cvModalIframe.onload = () => {
       if (cvModalLoader) cvModalLoader.classList.add('hidden');
     };
+    cvModalIframe.src = memberUrl;
 
     cvModalBackdrop.classList.add('active');
     cvModalBackdrop.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+    if (cvModalClose) cvModalClose.focus({ preventScroll: true });
   }
 
   function closeCvModal() {
-    if (!cvModalBackdrop) return;
+    if (!cvModalBackdrop || !cvModalBackdrop.classList.contains('active')) return;
     cvModalBackdrop.classList.remove('active');
     cvModalBackdrop.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
     // Reset iframe to release resources & stop any audio/scripts in member CV
-    setTimeout(() => {
+    cvCloseTimer = setTimeout(() => {
       if (cvModalIframe) cvModalIframe.src = '';
     }, 300);
+    if (cvReturnFocus) cvReturnFocus.focus({ preventScroll: true });
   }
+
+  function openCardCv(card) {
+    const btn = card.querySelector('.btn-cv-quickview');
+    if (!btn) return;
+    openCvModal(btn.dataset.folder, btn.dataset.name, btn.dataset.role,
+      btn.dataset.sin, btn.dataset.seal, btn.dataset.color);
+  }
+
+  cards.forEach((card) => {
+    // Portraits and non-control areas open the same CV as the explicit button.
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('a, button, input, select, textarea')) return;
+      if (window.getSelection().toString()) return;
+      openCardCv(card);
+    });
+    card.querySelectorAll('[data-cv-trigger]').forEach((link) => {
+      link.addEventListener('click', (e) => {
+        // Keep normal link behavior for opening a separate tab.
+        if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+        if (!cvModalBackdrop || !cvModalIframe) return;
+        e.preventDefault();
+        openCardCv(card);
+      });
+    });
+  });
 
   quickViewBtns.forEach((btn) => {
     btn.addEventListener('click', (e) => {
