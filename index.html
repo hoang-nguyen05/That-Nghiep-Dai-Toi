@@ -72,18 +72,21 @@
 
       <div class="search-box">
         <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-        <input type="text" class="search-input" id="memberSearch" placeholder="Tìm theo tên thành viên hoặc vai trò..." aria-label="Tìm thành viên">
+        <input type="text" class="search-input" id="memberSearch" placeholder="Tìm theo tên thành viên, vai trò hoặc đại tội (dục vọng, kiêu ngạo...)..." aria-label="Tìm thành viên">
       </div>
     </section>
 
     <!-- 7 Member Cards Grid -->
     <section class="members-grid" id="membersGrid" aria-label="Danh sách 7 thành viên">
 
-      <!-- 1. Nguyễn Đắc Hoàng -->
-      <article class="card" data-status="ready" data-name="nguyễn đắc hoàng" data-role="trợ giảng tin học web developer">
+      <!-- 1. Nguyễn Đắc Hoàng - Dục Vọng -->
+      <article class="card" data-status="ready" data-name="nguyễn đắc hoàng nguyen dac hoang" data-role="trợ giảng tin học web developer" data-sin="dục vọng duc vong lust">
         <div class="card-header">
           <div class="card-avatar">H</div>
-          <span class="badge-status ready">Đã có CV</span>
+          <div class="card-header-tags">
+            <span class="badge-sin sin-lust" title="Đại Tội: Dục Vọng">💋 Dục Vọng</span>
+            <span class="badge-status ready">Đã có CV</span>
+          </div>
         </div>
         <h3 class="card-name">Nguyễn Đắc Hoàng</h3>
         <p class="card-role">Trợ giảng Tin Học · Web Developer</p>
@@ -96,11 +99,14 @@
         </div>
       </article>
 
-      <!-- 2. Hoàng Bắc -->
-      <article class="card" data-status="ready" data-name="hoàng bắc" data-role="sinh viên cntt frontend web developer">
+      <!-- 2. Hoàng Bắc - Kiêu Ngạo -->
+      <article class="card" data-status="ready" data-name="hoàng bắc hoang bac" data-role="sinh viên cntt frontend web developer" data-sin="kiêu ngạo kieu ngao pride">
         <div class="card-header">
           <div class="card-avatar">B</div>
-          <span class="badge-status ready">Đã có CV</span>
+          <div class="card-header-tags">
+            <span class="badge-sin sin-pride" title="Đại Tội: Kiêu Ngạo">👑 Kiêu Ngạo</span>
+            <span class="badge-status ready">Đã có CV</span>
+          </div>
         </div>
         <h3 class="card-name">Hoàng Bắc</h3>
         <p class="card-role">Sinh viên CNTT · Frontend / Web Developer</p>
@@ -113,11 +119,14 @@
         </div>
       </article>
 
-      <!-- 3. Lường Thị Hạnh -->
-      <article class="card" data-status="ready" data-name="lường thị hạnh lương thị hạnh lường hạnh" data-role="kỹ sư phần mềm full-stack developer react node typescript">
+      <!-- 3. Lường Thị Hạnh - Phàm Ăn -->
+      <article class="card" data-status="ready" data-name="lường thị hạnh lương thị hạnh lường hạnh luong thi hanh" data-role="kỹ sư phần mềm full-stack developer react node typescript" data-sin="phàm ăn pham an gluttony">
         <div class="card-header">
           <div class="card-avatar">H</div>
-          <span class="badge-status ready">Đã có CV</span>
+          <div class="card-header-tags">
+            <span class="badge-sin sin-gluttony" title="Đại Tội: Phàm Ăn">🍖 Phàm Ăn</span>
+            <span class="badge-status ready">Đã có CV</span>
+          </div>
         </div>
         <h3 class="card-name">Lường Thị Hạnh</h3>
         <p class="card-role">Kỹ Sư Phần Mềm · Full-Stack Developer</p>
@@ -130,11 +139,14 @@
         </div>
       </article>
 
-      <!-- 4. Dương Tuấn Hoàng -->
-      <article class="card" data-status="ready" data-name="dương tuấn hoàng duong tuan hoang" data-role="frontend responsive accessibility web developer tv04">
+      <!-- 4. Dương Tuấn Hoàng - Phẫn Nộ -->
+      <article class="card" data-status="ready" data-name="dương tuấn hoàng duong tuan hoang" data-role="frontend responsive accessibility web developer tv04" data-sin="phẫn nộ phan no phẫn no wrath">
         <div class="card-header">
           <div class="card-avatar">H</div>
-          <span class="badge-status ready">Đã có CV</span>
+          <div class="card-header-tags">
+            <span class="badge-sin sin-wrath" title="Đại Tội: Phẫn Nộ">🔥 Phẫn Nộ</span>
+            <span class="badge-status ready">Đã có CV</span>
+          </div>
         </div>
         <h3 class="card-name">Dương Tuấn Hoàng</h3>
         <p class="card-role">Responsive &amp; Accessibility Developer</p>
@@ -147,11 +159,14 @@
         </div>
       </article>
 
-      <!-- 5. Nguyễn Huy Hoàng -->
-      <article class="card" data-status="ready" data-name="nguyễn huy hoàng nguyen huy hoang" data-role="data analyst phân tích dữ liệu python django sqlite">
+      <!-- 5. Nguyễn Huy Hoàng - Đố Kỵ -->
+      <article class="card" data-status="ready" data-name="nguyễn huy hoàng nguyen huy hoang" data-role="data analyst phân tích dữ liệu python django sqlite" data-sin="đố kỵ do ky do ki envy">
         <div class="card-header">
           <div class="card-avatar">H</div>
-          <span class="badge-status ready">Đã có CV</span>
+          <div class="card-header-tags">
+            <span class="badge-sin sin-envy" title="Đại Tội: Đố Kỵ">🐍 Đố Kỵ</span>
+            <span class="badge-status ready">Đã có CV</span>
+          </div>
         </div>
         <h3 class="card-name">Nguyễn Huy Hoàng</h3>
         <p class="card-role">Data Analyst</p>
@@ -164,11 +179,14 @@
         </div>
       </article>
 
-      <!-- 6. Nông Lâm Ngọc Sơn -->
-      <article class="card" data-status="ready" data-name="nông lâm ngọc sơn nong lam ngoc son" data-role="network operations center noc hạ tầng mạng cisco mikrotik">
+      <!-- 6. Nông Lâm Ngọc Sơn - Tham Lam -->
+      <article class="card" data-status="ready" data-name="nông lâm ngọc sơn nong lam ngoc son" data-role="network operations center noc hạ tầng mạng cisco mikrotik" data-sin="tham lam greed">
         <div class="card-header">
           <div class="card-avatar">S</div>
-          <span class="badge-status ready">Đã có CV</span>
+          <div class="card-header-tags">
+            <span class="badge-sin sin-greed" title="Đại Tội: Tham Lam">💰 Tham Lam</span>
+            <span class="badge-status ready">Đã có CV</span>
+          </div>
         </div>
         <h3 class="card-name">Nông Lâm Ngọc Sơn</h3>
         <p class="card-role">Network Operations Center (NOC)</p>
@@ -181,11 +199,14 @@
         </div>
       </article>
 
-      <!-- 7. Vi Anh Quân -->
-      <article class="card" data-status="ready" data-name="vi anh quân vi anh quan" data-role="lập trình viên web sinh viên cntt html css javascript tv07">
+      <!-- 7. Vi Anh Quân - Lười Biếng -->
+      <article class="card" data-status="ready" data-name="vi anh quân vi anh quan" data-role="lập trình viên web sinh viên cntt html css javascript tv07" data-sin="lười biếng luoi bieng sloth">
         <div class="card-header">
           <div class="card-avatar">Q</div>
-          <span class="badge-status ready">Đã có CV</span>
+          <div class="card-header-tags">
+            <span class="badge-sin sin-sloth" title="Đại Tội: Lười Biếng">🦥 Lười Biếng</span>
+            <span class="badge-status ready">Đã có CV</span>
+          </div>
         </div>
         <h3 class="card-name">Vi Anh Quân</h3>
         <p class="card-role">Lập trình viên Web · Frontend Developer</p>

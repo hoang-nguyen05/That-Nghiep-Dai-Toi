@@ -402,6 +402,14 @@ header.site-header {
   object-fit: cover;
 }
 
+.card-header-tags {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
 .badge-status {
   font-size: 11px;
   font-weight: 700;
@@ -409,6 +417,7 @@ header.site-header {
   text-transform: uppercase;
   padding: 4px 10px;
   border-radius: 20px;
+  white-space: nowrap;
 }
 
 .badge-status.ready {
@@ -421,6 +430,75 @@ header.site-header {
   background: var(--pending-bg);
   color: var(--pending-text);
   border: 1px solid rgba(250, 204, 21, 0.25);
+}
+
+/* Seven Deadly Sins Badges */
+.badge-sin {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 4px 11px;
+  border-radius: 20px;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: default;
+}
+
+.badge-sin:hover {
+  transform: translateY(-1px) scale(1.05);
+}
+
+.sin-lust {
+  background: linear-gradient(135deg, rgba(244, 63, 94, 0.18), rgba(236, 72, 153, 0.26));
+  color: #fda4af;
+  border: 1px solid rgba(244, 63, 94, 0.5);
+  box-shadow: 0 0 12px rgba(244, 63, 94, 0.2);
+}
+
+.sin-greed {
+  background: linear-gradient(135deg, rgba(234, 179, 8, 0.18), rgba(245, 158, 11, 0.26));
+  color: #fef08a;
+  border: 1px solid rgba(234, 179, 8, 0.5);
+  box-shadow: 0 0 12px rgba(234, 179, 8, 0.2);
+}
+
+.sin-pride {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.18), rgba(139, 92, 246, 0.26));
+  color: #e9d5ff;
+  border: 1px solid rgba(168, 85, 247, 0.5);
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.2);
+}
+
+.sin-gluttony {
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.18), rgba(234, 88, 12, 0.26));
+  color: #fed7aa;
+  border: 1px solid rgba(249, 115, 22, 0.5);
+  box-shadow: 0 0 12px rgba(249, 115, 22, 0.2);
+}
+
+.sin-envy {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.18), rgba(5, 150, 105, 0.26));
+  color: #a7f3d0;
+  border: 1px solid rgba(16, 185, 129, 0.5);
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.2);
+}
+
+.sin-sloth {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.18), rgba(14, 165, 233, 0.26));
+  color: #bae6fd;
+  border: 1px solid rgba(56, 189, 248, 0.5);
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.2);
+}
+
+.sin-wrath {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.22), rgba(220, 38, 38, 0.32));
+  color: #fecaca;
+  border: 1px solid rgba(239, 68, 68, 0.55);
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.25);
 }
 
 .card-name {

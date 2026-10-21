@@ -15,9 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const status = card.getAttribute('data-status');
       const name = (card.getAttribute('data-name') || '').toLowerCase();
       const role = (card.getAttribute('data-role') || '').toLowerCase();
+      const sin = (card.getAttribute('data-sin') || '').toLowerCase();
 
       const matchesStatus = (activeFilter === 'all') || (status === activeFilter);
-      const matchesSearch = !searchTerm || name.includes(searchTerm) || role.includes(searchTerm);
+      const matchesSearch = !searchTerm || name.includes(searchTerm) || role.includes(searchTerm) || sin.includes(searchTerm);
 
       if (matchesStatus && matchesSearch) {
         card.style.display = 'flex';
