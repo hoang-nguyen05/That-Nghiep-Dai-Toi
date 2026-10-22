@@ -356,145 +356,85 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // 5. Procedural Dark Gothic Sound Synthesizer (Web Audio API)
-  //    (Zero audio files needed, pure synthesizer)
+  // 5. Dark Gothic Audio Player (TikTok Theme: @kame_mono)
   // =========================================================================
   const btnAudioToggle = document.getElementById('btnAudioToggle');
   const audioIcon = document.getElementById('audioIcon');
   const audioText = document.getElementById('audioText');
 
-  let audioCtx = null;
+  let bgAudio = document.getElementById('bgThemeAudio');
+  if (!bgAudio) {
+    bgAudio = new Audio('assets/audio/sin_theme.mp3');
+    bgAudio.id = 'bgThemeAudio';
+    bgAudio.loop = true;
+    bgAudio.preload = 'auto';
+  } else {
+    bgAudio.loop = true;
+  }
+
   let isAudioPlaying = false;
-  let droneOsc1 = null;
-  let droneOsc2 = null;
-  let droneGain = null;
-  let lfo = null;
-  let bellInterval = null;
+  let fadeInterval = null;
 
-  function initDarkAudio() {
-    if (!audioCtx) {
-      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  function fadeAudioIn(targetVolume = 0.65, step = 0.05, delay = 40) {
+    if (!bgAudio) return;
+    clearInterval(fadeInterval);
+    bgAudio.volume = 0;
+    const playPromise = bgAudio.play();
+    if (playPromise !== undefined) {
+      playPromise.then(() => {
+        fadeInterval = setInterval(() => {
+          if (bgAudio.volume < targetVolume) {
+            bgAudio.volume = Math.min(targetVolume, Number((bgAudio.volume + step).toFixed(2)));
+          } else {
+            clearInterval(fadeInterval);
+          }
+        }, delay);
+      }).catch(err => {
+        console.warn('Playback error or blocked by autoplay policy:', err);
+      });
     }
   }
 
-  function startDarkDrone() {
-    if (!audioCtx) initDarkAudio();
-    if (audioCtx.state === 'suspended') {
-      audioCtx.resume();
-    }
-
-    const now = audioCtx.currentTime;
-
-    // Master Drone Gain
-    droneGain = audioCtx.createGain();
-    droneGain.gain.setValueAtTime(0.001, now);
-    droneGain.gain.exponentialRampToValueAtTime(0.2, now + 2.5);
-
-    // Filter for muffled dark cellar acoustics
-    const filter = audioCtx.createBiquadFilter();
-    filter.type = 'lowpass';
-    filter.frequency.setValueAtTime(220, now);
-
-    // Deep Sub-Bass Drone 1 (D1 ~ 36.7Hz)
-    droneOsc1 = audioCtx.createOscillator();
-    droneOsc1.type = 'sawtooth';
-    droneOsc1.frequency.setValueAtTime(36.7, now);
-
-    // Secondary Minor Drone 2 (A1 ~ 55Hz, dark fifth)
-    droneOsc2 = audioCtx.createOscillator();
-    droneOsc2.type = 'sine';
-    droneOsc2.frequency.setValueAtTime(55, now);
-
-    // Ethereal LFO for breathing drone effect
-    lfo = audioCtx.createOscillator();
-    const lfoGain = audioCtx.createGain();
-    lfo.frequency.setValueAtTime(0.12, now); // Slow pulse every 8 seconds
-    lfoGain.gain.setValueAtTime(60, now);
-    lfo.connect(lfoGain);
-    lfoGain.connect(filter.frequency);
-
-    // Routing
-    droneOsc1.connect(filter);
-    droneOsc2.connect(filter);
-    filter.connect(droneGain);
-    droneGain.connect(audioCtx.destination);
-
-    droneOsc1.start(now);
-    droneOsc2.start(now);
-    lfo.start(now);
-
-    // Play initial resonant bell chime
-    triggerGothicBell(146.8); // D3
-
-    // Periodic eerie church bell toll (every 18s)
-    bellInterval = setInterval(() => {
-      if (isAudioPlaying && audioCtx) {
-        const tones = [146.8, 174.6, 220.0]; // D, F, A (D minor)
-        const tone = tones[Math.floor(Math.random() * tones.length)];
-        triggerGothicBell(tone);
+  function fadeAudioOut(step = 0.05, delay = 35) {
+    if (!bgAudio) return;
+    clearInterval(fadeInterval);
+    fadeInterval = setInterval(() => {
+      if (bgAudio.volume > 0.05) {
+        bgAudio.volume = Math.max(0, Number((bgAudio.volume - step).toFixed(2)));
+      } else {
+        bgAudio.pause();
+        bgAudio.volume = 0;
+        clearInterval(fadeInterval);
       }
-    }, 18000);
-  }
-
-  function triggerGothicBell(freq) {
-    if (!audioCtx) return;
-    const now = audioCtx.currentTime;
-
-    const bellOsc = audioCtx.createOscillator();
-    const bellGain = audioCtx.createGain();
-    const bellFilter = audioCtx.createBiquadFilter();
-
-    bellOsc.type = 'sine';
-    bellOsc.frequency.setValueAtTime(freq, now);
-
-    bellFilter.type = 'bandpass';
-    bellFilter.frequency.setValueAtTime(freq * 1.5, now);
-    bellFilter.Q.setValueAtTime(3, now);
-
-    bellGain.gain.setValueAtTime(0.001, now);
-    bellGain.gain.exponentialRampToValueAtTime(0.3, now + 0.05);
-    bellGain.gain.exponentialRampToValueAtTime(0.0001, now + 6.0);
-
-    bellOsc.connect(bellFilter);
-    bellFilter.connect(bellGain);
-    bellGain.connect(audioCtx.destination);
-
-    bellOsc.start(now);
-    bellOsc.stop(now + 6.5);
-  }
-
-  function stopDarkDrone() {
-    if (droneGain && audioCtx) {
-      const now = audioCtx.currentTime;
-      droneGain.gain.setValueAtTime(droneGain.gain.value, now);
-      droneGain.gain.exponentialRampToValueAtTime(0.0001, now + 1.5);
-      setTimeout(() => {
-        try {
-          if (droneOsc1) droneOsc1.stop();
-          if (droneOsc2) droneOsc2.stop();
-          if (lfo) lfo.stop();
-        } catch (e) {}
-      }, 1600);
-    }
-    if (bellInterval) clearInterval(bellInterval);
+    }, delay);
   }
 
   if (btnAudioToggle) {
     btnAudioToggle.addEventListener('click', () => {
       if (!isAudioPlaying) {
-        startDarkDrone();
+        fadeAudioIn(0.65);
         isAudioPlaying = true;
         btnAudioToggle.classList.add('active');
-        audioIcon.textContent = '🔊';
-        audioText.textContent = 'Đang Phát Âm Hưởng';
+        if (audioIcon) audioIcon.textContent = '🔊';
+        if (audioText) audioText.textContent = 'Đang Phát Âm Hưởng';
       } else {
-        stopDarkDrone();
+        fadeAudioOut();
         isAudioPlaying = false;
         btnAudioToggle.classList.remove('active');
-        audioIcon.textContent = '🔮';
-        audioText.textContent = 'Âm Hưởng U Tối';
+        if (audioIcon) audioIcon.textContent = '🔮';
+        if (audioText) audioText.textContent = 'Âm Hưởng U Tối';
       }
     });
+
+    if (bgAudio) {
+      bgAudio.addEventListener('pause', () => {
+        if (!isAudioPlaying) {
+          btnAudioToggle.classList.remove('active');
+          if (audioIcon) audioIcon.textContent = '🔮';
+          if (audioText) audioText.textContent = 'Âm Hưởng U Tối';
+        }
+      });
+    }
   }
 
   // =========================================================================
